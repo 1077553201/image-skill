@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{产品英文名}} 视觉策略报告 | {{品类中文名}}跨境电商视觉增长分析</title>
+  <link rel="stylesheet" href="assets/report-base.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+  /* ============================================================
+     Visual Growth Planner Pro — Chart Helpers
+     ============================================================ */
+  (function () {
+    'use strict';
+    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif";
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = '#555';
+    window.ReportCharts = {
+      bar: function (cfg) {
+        var ctx = document.getElementById(cfg.canvasId);
+        if (!ctx) return null;
+        return new Chart(ctx.getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: cfg.labels,
+            datasets: cfg.datasets.map(function (ds) {
+              return { label: ds.label, data: ds.data, backgroundColor: ds.backgroundColor || '#f97316', borderRadius: ds.borderRadius !== undefined ? ds.borderRadius : 6 };
+            })
+          },
+          options: Object.assign({
+            responsive: true,
+            plugins: { title: { display: !!cfg.title, text: cfg.title || '', font: { size: 14, weight: 'bold' }, color: '#1a1a2e' }, legend: { display: cfg.legend !== false } },
+            scales: { y: { beginAtZero: true } }
+          }, cfg.options || {})
+        });
+      },
+      horizontalBar: function (cfg) {
+        var ctx = document.getElementById(cfg.canvasId);
+        if (!ctx) return null;
+        return new Chart(ctx.getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: cfg.labels,
+            datasets: cfg.datasets.map(function (ds) {
+              return { label: ds.label, data: ds.data, backgroundColor: ds.backgroundColor || '#16a34a', borderRadius: ds.borderRadius !== undefined ? ds.borderRadius : 4 };
+            })
+          },
+          options: Object.assign({
+            indexAxis: 'y', responsive: true,
+            plugins: { title: { display: !!cfg.title, text: cfg.title || '', font: { size: 14, weight: 'bold' }, color: '#1a1a2e' } },
+            scales: { x: { beginAtZero: true } }
+          }, cfg.options || {})
+        });
+      },
+      radar: function (cfg) {
+        var ctx = document.getElementById(cfg.canvasId);
+        if (!ctx) return null;
+        return new Chart(ctx.getContext('2d'), {
+          type: 'radar',
+          data: {
+            labels: cfg.labels,
+            datasets: cfg.datasets.map(function (ds) {
+              return { label: ds.label, data: ds.data, backgroundColor: ds.bgColor || 'rgba(249,115,22,0.1)', borderColor: ds.borderColor || '#f97316', borderWidth: 2, pointBackgroundColor: ds.pointColor || '#f97316' };
+            })
+          },
+          options: Object.assign({
+            responsive: true,
+            plugins: { title: { display: !!cfg.title, text: cfg.title || '', font: { size: 14, weight: 'bold' }, color: '#1a1a2e' } },
+            scales: { r: { beginAtZero: true, ticks: { stepSize: 1 } } }
+          }, cfg.options || {})
+        });
+      },
+      doughnut: function (cfg) {
+        var ctx = document.getElementById(cfg.canvasId);
+        if (!ctx) return null;
+        return new Chart(ctx.getContext('2d'), {
+          type: 'doughnut',
+          data: {
+            labels: cfg.labels,
+            datasets: [{ data: cfg.data, backgroundColor: cfg.colors || ['#f97316', '#2563eb', '#16a34a', '#7c3aed', '#ca8a04'], borderWidth: 0 }]
+          },
+          options: Object.assign({
+            responsive: true,
+            plugins: { title: { display: !!cfg.title, text: cfg.title || '', font: { size: 14, weight: 'bold' }, color: '#1a1a2e' } }
+          }, cfg.options || {})
+        });
+      }
+    };
+  })();
+  </script>
+  <style>
+    /* 报告专用增强样式 */
+    .header .brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249, 115, 22, 0.15);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      color: #ffedd5;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: .5px;
+    }
+    .header .brand-tag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .header h1 { font-size: 36px; line-height: 1.2; }
+    .header h1 .accent { color: var(--accent); }
+
+    .key-findings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 768px) { .key-findings { grid-template-columns: 1fr; } }
+    .finding-card {
+      background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius);
+      padding: 20px;
+      position: relative;
+    }
+    .finding-card .finding-num {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 32px; font-weight: 800;
+      color: rgba(249, 115, 22, 0.12);
+      line-height: 1;
+    }
+    .finding-card .finding-title {
+      font-weight: 700; font-size: 15px;
+      color: var(--accent-dark);
+      margin-bottom: 6px;
+    }
+    .finding-card .finding-text {
+      font-size: 13px; color: var(--text-secondary); line-height: 1.6;
+    }
+
+    .highlight-row {
+      background: var(--accent-light) !important;
+      font-weight: 600;
+    }
+
+    .strategy-matrix {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+    @media (max-width: 768px) { .strategy-matrix { grid-template-columns: 1fr 1fr; } }
+    .matrix-cell {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+    }
+    .matrix-cell .mc-icon { font-size: 24px; margin-bottom: 6px; }
+    .matrix-cell .mc-label { font-size: 12px; font-weight: 600; color: var(--text); }
+    .matrix-cell .mc-desc { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      margin: 20px 0;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px; top: 4px; bottom: 4px;
+      width: 2px;
+      background: var(--accent-light);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -24px; top: 6px;
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-item .tl-title {
+      font-weight: 700; font-size: 14px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .timeline-item .tl-desc {
+      font-size: 13px; color: var(--text-secondary); line-height: 1.6;
+    }
+    .timeline-item .tl-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ===== 头部 ===== -->
+    <header class="header">
+      <span class="brand-tag">VISUAL STRATEGY REPORT · 视觉策略报告</span>
+      <h1><span class="accent">{{产品英文名}}</span><br>视觉策略分析报告</h1>
+      <p class="subtitle">{{品类中文名}}跨境电商视觉增长系统分析 — 从竞品调研到视觉决策的完整路径</p>
+      <div class="meta">
+        <span>📦 品类：{{品类名称}}</span>
+        <span>🛒 平台：{{平台，如 Amazon}}</span>
+        <span>📅 生成日期：{{YYYY-MM-DD}}</span>
+        <span>📋 版本：v1.0</span>
+      </div>
+    </header>
+
+    <!-- ===== 目录 ===== -->
+    <section class="section">
+      <h2><span class="num">0</span> 报告目录</h2>
+      <p class="desc">共 12 个章节，完整覆盖 Atlas 视觉工作流从竞品分析到视觉决策的全链路</p>
+      <div class="toc">
+        <a href="#sec1"><span class="toc-num">01</span>报告概览</a>
+        <a href="#sec2"><span class="toc-num">02</span>市场与竞品分析</a>
+        <a href="#sec3"><span class="toc-num">03</span>关键词与标题分析</a>
+        <a href="#sec4"><span class="toc-num">04</span>主图视觉策略</a>
+        <a href="#sec5"><span class="toc-num">05</span>附图策略</a>
+        <a href="#sec6"><span class="toc-num">06</span>用户洞察与评论分析</a>
+        <a href="#sec7"><span class="toc-num">07</span>FABE 卖点转译</a>
+        <a href="#sec8"><span class="toc-num">08</span>A+ 页面策略</a>
+        <a href="#sec9"><span class="toc-num">09</span>视频策略</a>
+        <a href="#sec10"><span class="toc-num">10</span>品牌旗舰店策略</a>
+        <a href="#sec11"><span class="toc-num">11</span>数据诊断与优化闭环</a>
+        <a href="#sec12"><span class="toc-num">12</span>行动计划与优先级</a>
+      </div>
+    </section>
+
+    <!-- ===== 第1章：报告概览 ===== -->
+    <section class="section" id="sec1">
+      <h2><span class="num">1</span> 报告概览</h2>
+      <p class="desc">{{品类定义、研究范围、研究方法说明}}</p>
+
+      <h3>核心数据速览</h3>
+      <div class="grid-4">
+        <div class="stat-card">
+          <div class="value">{{数值1}}</div>
+          <div class="label">{{指标1，如 市场规模}}</div>
+        </div>
+        <div class="stat-card v2">
+          <div class="value">{{数值2}}</div>
+          <div class="label">{{指标2，如 头部品牌数}}</div>
+        </div>
+        <div class="stat-card v3">
+          <div class="value">{{数值3}}</div>
+          <div class="label">{{指标3，如 均价区间}}</div>
+        </div>
+        <div class="stat-card v4">
+          <div class="value">{{数值4}}</div>
+          <div class="label">{{指标4，如 增长率}}</div>
+        </div>
+      </div>
+
+      <h3>三大核心发现</h3>
+      <div class="key-findings">
+        <div class="finding-card">
+          <span class="finding-num">01</span>
+          <div class="finding-title">{{发现1标题，如 市场格局}}</div>
+          <div class="finding-text">{{发现1详细描述，说明本品类当前市场状态和竞争格局}}</div>
+        </div>
+        <div class="finding-card">
+          <span class="finding-num">02</span>
+          <div class="finding-title">{{发现2标题，如 用户痛点}}</div>
+          <div class="finding-text">{{发现2详细描述，说明用户最关心的问题和决策因素}}</div>
+        </div>
+        <div class="finding-card">
+          <span class="finding-num">03</span>
+          <div class="finding-title">{{发现3标题，如 视觉机会}}</div>
+          <div class="finding-text">{{发现3详细描述，说明可切入的差异化视觉策略方向}}</div>
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <div class="insight-title">💡 核心洞察</div>
+        <div class="insight-text">{{一句话核心洞察，概括本品类视觉策略的最关键方向和机会点}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 第2章：市场与竞品分析 ===== -->
+    <section class="section" id="sec2">
+      <h2><span class="num">2</span> 市场与竞品分析</h2>
+      <p class="desc">价格带分布、头部品牌格局、视觉同质化程度评估</p>
+
+      <h3>价格带分布</h3>
+      <div class="chart-wrap">
+        <canvas id="priceRangeChart" height="220"></canvas>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h4>价格带占比</h4>
+          <div class="chart-wrap">
+            <canvas id="priceDoughnut" height="200"></canvas>
+          </div>
+        </div>
+        <div>
+          <h4>各价格带特征</h4>
+          <div class="strategy-grid" style="grid-template-columns:1fr;gap:10px;">
+            <div class="strategy-item">
+              <div class="si-title">入门级 (${{低价区间}})</div>
+              <div class="si-desc">{{入门级产品特征、目标人群、主要卖点}}</div>
+            </div>
+            <div class="strategy-item">
+              <div class="si-title">进阶级 (${{中价区间}})</div>
+              <div class="si-desc">{{进阶级产品特征、目标人群、主要卖点}}</div>
+            </div>
+            <div class="strategy-item">
+              <div class="si-title">高端级 (${{高价区间}}+)</div>
+              <div class="si-desc">{{高端级产品特征、目标人群、主要卖点}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>头部品牌格局</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>品牌</th>
+            <th>价格带</th>
+            <th>主打卖点</th>
+            <th>视觉风格</th>
+            <th>市场地位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>{{品牌1}}</strong></td>
+            <td><span class="tag tag-high">{{价格区间1}}</span></td>
+            <td>{{核心卖点1}}</td>
+            <td>{{视觉风格1}}</td>
+            <td>{{市场地位1}}</td>
+          </tr>
+          <tr>
+            <td>{{品牌2}}</td>
+            <td><span class="tag tag-mid">{{价格区间2}}</span></td>
+            <td>{{核心卖点2}}</td>
+            <td>{{视觉风格2}}</td>
+            <td>{{市场地位2}}</td>
+          </tr>
+          <tr>
+            <td>{{品牌3}}</td>
+            <td><span class="tag tag-mid">{{价格区间3}}</span></td>
+            <td>{{核心卖点3}}</td>
+            <td>{{视觉风格3}}</td>
+            <td>{{市场地位3}}</td>
+          </tr>
+          <tr>
+            <td>{{品牌4}}</td>
+            <td><span class="tag tag-low">{{价格区间4}}</span></td>
+            <td>{{核心卖点4}}</td>
+            <td>{{视觉风格4}}</td>
+            <td>{{市场地位4}}</td>
+          </tr>
+          <tr>
+            <td>{{品牌5}}</td>
+            <td><span class="tag tag-low">{{价格区间5}}</span></td>
+            <td>{{核心卖点5}}</td>
+            <td>{{视觉风格5}}</td>
+            <td>{{市场地位5}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>视觉同质化评估</h3>
+      <div class="chart-wrap">
+        <canvas id="homogeneityRadar" height="300"></canvas>
+      </div>
+
+      <div class="insight-box blue">
+        <div class="insight-title">📊 市场结论</div>
+        <div class="insight-text">{{市场分析总结，包括：竞争格局判断、价格带机会、差异化切入点}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 第3章：关键词与标题分析 ===== -->
+    <section class="section" id="sec3">
+      <h2><span class="num">3</span> 关键词与标题分析</h2>
+      <p class="desc">核心关键词矩阵、标题结构拆解、流量入口布局</p>
+
+      <h3>关键词矩阵</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>类型</th>
+            <th>关键词</th>
+            <th>月搜索量</th>
+            <th>竞争度</th>
+            <th>CPC</th>
+            <th>布局建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tag-accent">核心词</span></td>
+            <td>{{核心关键词1}}</td>
+            <td>{{搜索量1}}</td>
+            <td><span class="tag tag-high">{{高/中/低}}</span></td>
+            <td>${{CPC1}}</td>
+            <td>{{布局建议1}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-accent">核心词</span></td>
+            <td>{{核心关键词2}}</td>
+            <td>{{搜索量2}}</td>
+            <td><span class="tag tag-mid">{{高/中/低}}</span></td>
+            <td>${{CPC2}}</td>
+            <td>{{布局建议2}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-info">长尾词</span></td>
+            <td>{{长尾关键词1}}</td>
+            <td>{{搜索量3}}</td>
+            <td><span class="tag tag-low">{{高/中/低}}</span></td>
+            <td>${{CPC3}}</td>
+            <td>{{布局建议3}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-info">长尾词</span></td>
+            <td>{{长尾关键词2}}</td>
+            <td>{{搜索量4}}</td>
+            <td><span class="tag tag-low">{{高/中/低}}</span></td>
+            <td>${{CPC4}}</td>
+            <td>{{布局建议4}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple">场景词</span></td>
+            <td>{{场景关键词1}}</td>
+            <td>{{搜索量5}}</td>
+            <td><span class="tag tag-mid">{{高/中/低}}</span></td>
+            <td>${{CPC5}}</td>
+            <td>{{布局建议5}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple">场景词</span></td>
+            <td>{{场景关键词2}}</td>
+            <td>{{搜索量6}}</td>
+            <td><span class="tag tag-low">{{高/中/低}}</span></td>
+            <td>${{CPC6}}</td>
+            <td>{{布局建议6}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>标题结构拆解</h3>
+      <div class="flow-row">
+        <span class="flow-step">品牌词</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">核心关键词</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">核心特性/卖点</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">使用场景</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">规格/尺寸/颜色</span>
+      </div>
+
+      <h4>头部标题共性分析</h4>
+      <div class="grid-2">
+        <div class="strategy-item">
+          <div class="si-title">✅ 高频元素</div>
+          <div class="si-desc">{{标题中出现频率最高的关键词和元素列表}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">🔑 差异化关键词</div>
+          <div class="si-desc">{{中高端品牌使用的差异化关键词和表达}}</div>
+        </div>
+      </div>
+
+      <div class="insight-box green">
+        <div class="insight-title">🔑 关键词策略</div>
+        <div class="insight-text">{{关键词布局核心策略总结：主词抢占流量、长尾词精准转化、场景词拓展人群、差异化词建立心智}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 第4章：主图视觉策略 ===== -->
+    <section class="section" id="sec4">
+      <h2><span class="num">4</span> 主图视觉策略</h2>
+      <p class="desc">类目共识元素、差异化锚点机会、信任证据布局、CTR优化方向</p>
+
+      <h3>主图三要素模型</h3>
+      <div class="strategy-matrix">
+        <div class="matrix-cell">
+          <div class="mc-icon">✅</div>
+          <div class="mc-label">共识元素</div>
+          <div class="mc-desc">不出错 · 品类识别</div>
+        </div>
+        <div class="matrix-cell">
+          <div class="mc-icon">🎯</div>
+          <div class="mc-label">差异化锚点</div>
+          <div class="mc-desc">被记住 · 脱颖而出</div>
+        </div>
+        <div class="matrix-cell">
+          <div class="mc-icon">🛡️</div>
+          <div class="mc-label">信任证据</div>
+          <div class="mc-desc">敢点击 · 降低顾虑</div>
+        </div>
+        <div class="matrix-cell">
+          <div class="mc-icon">📈</div>
+          <div class="mc-label">CTR优化</div>
+          <div class="mc-desc">提点击 · 数据验证</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h4>类目共识元素（必须有）</h4>
+          <div class="strategy-grid" style="grid-template-columns:1fr;gap:10px;">
+            <div class="strategy-item">
+              <div class="si-title">{{共识元素1名称}}</div>
+              <div class="si-desc">{{共识元素1说明，为什么必须有、市场上的表现}}</div>
+            </div>
+            <div class="strategy-item">
+              <div class="si-title">{{共识元素2名称}}</div>
+              <div class="si-desc">{{共识元素2说明}}</div>
+            </div>
+            <div class="strategy-item">
+              <div class="si-title">{{共识元素3名称}}</div>
+              <div class="si-desc">{{共识元素3说明}}</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4>差异化锚点机会</h4>
+          <div class="strategy-grid" style="grid-template-columns:1fr;gap:10px;">
+            <div class="strategy-item" style="background:var(--blue-light);">
+              <div class="si-title" style="color:var(--blue);">{{差异化方向1}}</div>
+              <div class="si-desc">{{差异化方向1说明、切入方式、预期效果}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--green-light);">
+              <div class="si-title" style="color:var(--green);">{{差异化方向2}}</div>
+              <div class="si-desc">{{差异化方向2说明}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--purple-light);">
+              <div class="si-title" style="color:var(--purple);">{{差异化方向3}}</div>
+              <div class="si-desc">{{差异化方向3说明}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>主图常见误区</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:25%">误区</th>
+            <th style="width:30%">市场表现</th>
+            <th style="width:45%">优化建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{误区1，如 信息过载}}</td>
+            <td>{{表现1描述}}</td>
+            <td>{{优化建议1}}</td>
+          </tr>
+          <tr>
+            <td>{{误区2，如 角度不统一}}</td>
+            <td>{{表现2描述}}</td>
+            <td>{{优化建议2}}</td>
+          </tr>
+          <tr>
+            <td>{{误区3，如 缺乏场景}}</td>
+            <td>{{表现3描述}}</td>
+            <td>{{优化建议3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box">
+        <div class="insight-title">🎯 主图策略结论</div>
+        <div class="insight-text">{{主图策略核心结论：先过品类识别（共识元素打底），再用{{核心差异化方向}}建立记忆点，辅以{{信任证据类型}}提升点击意愿}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 第5章：附图策略 ===== -->
+    <section class="section" id="sec5">
+      <h2><span class="num">5</span> 附图策略</h2>
+      <p class="desc">五步排布法应用、6大模块设计、节奏规划</p>
+
+      <h3>五步排布法</h3>
+      <div class="flow-row">
+        <span class="flow-step">① 问题场景</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">② 核心卖点</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">③ 证据支撑</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">④ 使用场景</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">⑤ FAQ/细节</span>
+      </div>
+
+      <h3>7张附图完整规划</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>图序</th>
+            <th>模块</th>
+            <th>核心任务</th>
+            <th>内容要点</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>图2</strong></td>
+            <td><span class="tag tag-high">痛点共鸣</span></td>
+            <td>建立共鸣，抓住注意力</td>
+            <td>{{图2内容要点描述}}</td>
+            <td><span class="tag tag-high">P0</span></td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>图3</strong></td>
+            <td><span class="tag tag-high">核心卖点</span></td>
+            <td>传递最核心差异化价值</td>
+            <td>{{图3内容要点描述}}</td>
+            <td><span class="tag tag-high">P0</span></td>
+          </tr>
+          <tr>
+            <td><strong>图4</strong></td>
+            <td><span class="tag tag-mid">证据/数据</span></td>
+            <td>用证据支撑卖点可信度</td>
+            <td>{{图4内容要点描述}}</td>
+            <td><span class="tag tag-mid">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>图5</strong></td>
+            <td><span class="tag tag-mid">功能展示</span></td>
+            <td>全面展示产品功能特性</td>
+            <td>{{图5内容要点描述}}</td>
+            <td><span class="tag tag-mid">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>图6</strong></td>
+            <td><span class="tag tag-info">使用场景</span></td>
+            <td>多场景代入，激发想象</td>
+            <td>{{图6内容要点描述}}</td>
+            <td><span class="tag tag-mid">P1</span></td>
+          </tr>
+          <tr>
+            <td><strong>图7</strong></td>
+            <td><span class="tag tag-low">尺寸/细节</span></td>
+            <td>消除信息差，降低退货</td>
+            <td>{{图7内容要点描述}}</td>
+            <td><span class="tag tag-low">P2</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>整页节奏设计</h3>
+      <div class="insight-box blue">
+        <div class="insight-title">📐 节奏原则</div>
+        <div class="insight-text">
+          情绪曲线：痛点冲击 → 解决方案 → 信任建立 → 场景向往 → 安心下单<br>
+          信息密度：高 → 高 → 中 → 低 → 中<br>
+          每张图只解决一个关键问题，信息过载 = 什么都记不住
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 第6章：用户洞察与评论分析 ===== -->
+    <section class="section" id="sec6">
+      <h2><span class="num">6</span> 用户洞察与评论分析</h2>
+      <p class="desc">痛点/痒点/爽点挖掘、负面评论归因、用户画像</p>
+
+      <h3>评论情感分布</h3>
+      <div class="chart-wrap">
+        <canvas id="sentimentChart" height="280"></canvas>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h4>正面评论高频词</h4>
+          <div class="strategy-grid" style="grid-template-columns:1fr 1fr;gap:8px;">
+            <div class="strategy-item" style="background:var(--green-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--green);font-size:13px;">{{正面词1}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比1}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--green-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--green);font-size:13px;">{{正面词2}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比2}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--green-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--green);font-size:13px;">{{正面词3}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比3}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--green-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--green);font-size:13px;">{{正面词4}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比4}}</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4>负面评论高频词</h4>
+          <div class="strategy-grid" style="grid-template-columns:1fr 1fr;gap:8px;">
+            <div class="strategy-item" style="background:var(--red-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--red);font-size:13px;">{{负面词1}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比1}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--red-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--red);font-size:13px;">{{负面词2}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比2}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--red-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--red);font-size:13px;">{{负面词3}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比3}}</div>
+            </div>
+            <div class="strategy-item" style="background:var(--red-light);padding:10px 12px;">
+              <div class="si-title" style="color:var(--red);font-size:13px;">{{负面词4}}</div>
+              <div class="si-desc" style="font-size:11px;">{{提及占比4}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>核心痛点 TOP5 与视觉应对</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:8%">排名</th>
+            <th style="width:22%">痛点</th>
+            <th style="width:10%">频次</th>
+            <th style="width:60%">视觉应对策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tag-high">1</span></td>
+            <td>{{痛点1描述}}</td>
+            <td>{{高}}</td>
+            <td>{{对应视觉策略1，如：主图突出XX功能、附图用对比图展示效果、A+放实验数据}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-high">2</span></td>
+            <td>{{痛点2描述}}</td>
+            <td>{{高}}</td>
+            <td>{{对应视觉策略2}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-mid">3</span></td>
+            <td>{{痛点3描述}}</td>
+            <td>{{中}}</td>
+            <td>{{对应视觉策略3}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-mid">4</span></td>
+            <td>{{痛点4描述}}</td>
+            <td>{{中}}</td>
+            <td>{{对应视觉策略4}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-low">5</span></td>
+            <td>{{痛点5描述}}</td>
+            <td>{{中低}}</td>
+            <td>{{对应视觉策略5}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>用户画像分布</h3>
+      <div class="grid-2">
+        <div class="chart-wrap">
+          <canvas id="personaChart" height="260"></canvas>
+        </div>
+        <div>
+          <div class="persona-card" style="margin-bottom:12px;">
+            <div class="persona-icon">👤</div>
+            <div class="persona-name">{{画像1名称}} ({{占比1}}%)</div>
+            <div class="persona-detail">{{画像1描述：人群特征、核心诉求、决策因素、价格敏感度}}</div>
+          </div>
+          <div class="persona-card">
+            <div class="persona-icon">👤</div>
+            <div class="persona-name">{{画像2名称}} ({{占比2}}%)</div>
+            <div class="persona-detail">{{画像2描述：人群特征、核心诉求、决策因素、价格敏感度}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight-box red">
+        <div class="insight-title">🎯 用户洞察核心结论</div>
+        <div class="insight-text">{{一句话总结用户最核心的购买动机和决策顾虑，以及视觉上应该如何对位}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 第7章：FABE 卖点转译 ===== -->
+    <section class="section" id="sec7">
+      <h2><span class="num">7</span> FABE 卖点转译</h2>
+      <p class="desc">FABE模型完整矩阵、核心利益点排序、卖点优先级</p>
+
+      <h3>FABE 完整矩阵</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:15%">特性 Feature</th>
+            <th style="width:18%">优势 Advantage</th>
+            <th style="width:25%">利益 Benefit</th>
+            <th style="width:27%">证据 Evidence</th>
+            <th style="width:15%">优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>{{特性1}}</strong></td>
+            <td>{{优势1}}</td>
+            <td><strong>{{利益1}}</strong></td>
+            <td>{{证据1，如数据/认证/实验/对比}}</td>
+            <td><span class="tag tag-high">P0</span></td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>{{特性2}}</strong></td>
+            <td>{{优势2}}</td>
+            <td><strong>{{利益2}}</strong></td>
+            <td>{{证据2}}</td>
+            <td><span class="tag tag-high">P0</span></td>
+          </tr>
+          <tr>
+            <td>{{特性3}}</td>
+            <td>{{优势3}}</td>
+            <td>{{利益3}}</td>
+            <td>{{证据3}}</td>
+            <td><span class="tag tag-mid">P1</span></td>
+          </tr>
+          <tr>
+            <td>{{特性4}}</td>
+            <td>{{优势4}}</td>
+            <td>{{利益4}}</td>
+            <td>{{证据4}}</td>
+            <td><span class="tag tag-mid">P1</span></td>
+          </tr>
+          <tr>
+            <td>{{特性5}}</td>
+            <td>{{优势5}}</td>
+            <td>{{利益5}}</td>
+            <td>{{证据5}}</td>
+            <td><span class="tag tag-low">P2</span></td>
+          </tr>
+          <tr>
+            <td>{{特性6}}</td>
+            <td>{{优势6}}</td>
+            <td>{{利益6}}</td>
+            <td>{{证据6}}</td>
+            <td><span class="tag tag-low">P2</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>核心利益点优先级</h3>
+      <div class="chart-wrap">
+        <canvas id="benefitChart" height="280"></canvas>
+      </div>
+
+      <div class="insight-box">
+        <div class="insight-title">🔥 核心卖点主张</div>
+        <div class="insight-text">{{一句话核心卖点主张，即用户为什么选你而不是竞品的最核心理由}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 第8章：A+ 页面策略 ===== -->
+    <section class="section" id="sec8">
+      <h2><span class="num">8</span> A+ 页面策略</h2>
+      <p class="desc">六段式结构应用、信任递进设计、品牌表达</p>
+
+      <h3>A+ 六段式信任递进结构</h3>
+      <div class="flow-row">
+        <span class="flow-step">① 品牌主张</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">② 核心卖点</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">③ 证据/工艺</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">④ 对比表格</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">⑤ 场景/人群</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">⑥ 品牌资产</span>
+      </div>
+
+      <h3>各模块详细规划</h3>
+      <div class="grid-2">
+        <div class="strategy-item">
+          <div class="si-title">首屏 · 品牌主张</div>
+          <div class="si-desc">{{品牌slogan + 核心价值主张 + 品牌KV图，快速建立品牌认知和专业感}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">第二屏 · 核心卖点</div>
+          <div class="si-desc">{{3-4个核心卖点图标化展示，每个配一句话利益点+场景小图}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">第三屏 · 证据/工艺</div>
+          <div class="si-desc">{{材质/工艺/认证/实验数据等深度证据，建立专业信任}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">第四屏 · 对比选型</div>
+          <div class="si-desc">{{产品系列对比表，帮助用户快速选型，同时展示产品矩阵}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">第五屏 · 场景/人群</div>
+          <div class="si-desc">{{多场景大图+人群画像，让用户代入自己的使用场景}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">尾屏 · 品牌背书</div>
+          <div class="si-desc">{{品牌故事/质保承诺/售后保障/品牌logo墙，收尾强化信任}}</div>
+        </div>
+      </div>
+
+      <div class="insight-box green">
+        <div class="insight-title">💡 A+ 设计原则</div>
+        <div class="insight-text">A+ 的核心任务是「信任升级」——从主图附图的产品层面，上升到品牌层面的专业感和信赖感。每一段都要比上一段提供更深一层的信任理由。</div>
+      </div>
+    </section>
+
+    <!-- ===== 第9章：视频策略 ===== -->
+    <section class="section" id="sec9">
+      <h2><span class="num">9</span> 视频策略</h2>
+      <p class="desc">内容类型组合、黄金脚本结构、投放位置</p>
+
+      <h3>视频内容矩阵</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>类型</th>
+            <th>内容定位</th>
+            <th>时长</th>
+            <th>投放位置</th>
+            <th>核心目标</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tag-accent">主视频</span></td>
+            <td>{{主视频内容定位描述}}</td>
+            <td>30-60s</td>
+            <td>主图位 / 附图首屏</td>
+            <td>快速建立认知 + 情感连接</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-info">功能视频</span></td>
+            <td>{{功能视频内容定位描述}}</td>
+            <td>15-30s</td>
+            <td>附图 / A+页面</td>
+            <td>深度理解卖点功能</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-purple">UGC视频</span></td>
+            <td>{{UGC视频内容定位描述}}</td>
+            <td>15-45s</td>
+            <td>评论区 / 社媒引流</td>
+            <td>真实感 + 信任背书</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>主视频黄金脚本结构</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--red-light);color:var(--red);">0-3s 钩子</span>
+          <div class="tl-title">{{钩子内容，如痛点场景/反差/问题抛出}}</div>
+          <div class="tl-desc">黄金3秒，必须抓住注意力，让用户继续看下去</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--yellow-light);color:var(--yellow);">3-10s 痛点放大</span>
+          <div class="tl-title">{{痛点场景描述}}</div>
+          <div class="tl-desc">放大用户痛点，引发共鸣，为产品出场做铺垫</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--accent-light);color:var(--accent);">10-20s 产品出场</span>
+          <div class="tl-title">{{产品展示+核心卖点描述}}</div>
+          <div class="tl-desc">产品惊艳出场，展示核心卖点如何解决前面的痛点</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--blue-light);color:var(--blue);">20-40s 卖点展开</span>
+          <div class="tl-title">{{2-3个核心卖点详细展示}}</div>
+          <div class="tl-desc">每个卖点配使用演示+效果展示+数据证据</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--green-light);color:var(--green);">40-55s 场景+效果</span>
+          <div class="tl-title">{{使用场景+最终效果展示}}</div>
+          <div class="tl-desc">多场景展示产品使用，呈现最终效果和用户满意度</div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--purple-light);color:var(--purple);">55-60s CTA</span>
+          <div class="tl-title">{{行动号召+品牌露出}}</div>
+          <div class="tl-desc">明确的行动号召，品牌logo和slogan收尾</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 第10章：品牌旗舰店策略 ===== -->
+    <section class="section" id="sec10">
+      <h2><span class="num">10</span> 品牌旗舰店策略</h2>
+      <p class="desc">核心模块规划、品牌视觉系统、心智占领路径</p>
+
+      <h3>旗舰店6大核心模块</h3>
+      <div class="grid-3">
+        <div class="strategy-item">
+          <div class="si-title">首页首屏 KV</div>
+          <div class="si-desc">{{品牌主视觉 + 核心爆款推荐 + 品牌主张，建立第一印象}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">品类导航区</div>
+          <div class="si-desc">{{清晰的产品分类导航，引导用户快速找到目标产品}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">爆款专区</div>
+          <div class="si-desc">{{销量TOP产品集中展示，利用从众心理降低决策门槛}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">新品推荐</div>
+          <div class="si-desc">{{新品首发专区，吸引老客复购和品牌关注者}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">品牌故事区</div>
+          <div class="si-desc">{{品牌理念/创始人故事/品牌使命，建立情感连接}}</div>
+        </div>
+        <div class="strategy-item">
+          <div class="si-title">售后保障区</div>
+          <div class="si-desc">{{物流/退换/质保/客服信息，降低决策顾虑}}</div>
+        </div>
+      </div>
+
+      <h3>品牌视觉系统</h3>
+      <div class="grid-2">
+        <div class="persona-card">
+          <div class="persona-icon">🎨</div>
+          <div class="persona-name">色彩体系</div>
+          <div class="persona-detail">主色 / 辅助色 / 中性色 / 功能色的明确定义和使用规范</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">🔤</div>
+          <div class="persona-name">字体规范</div>
+          <div class="persona-detail">标题/正文/数字的字体选择、字号层级、字重规范</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">📐</div>
+          <div class="persona-name">图形语言</div>
+          <div class="persona-detail">图标风格、装饰元素、数据可视化、版式网格系统</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon">📷</div>
+          <div class="persona-name">摄影风格</div>
+          <div class="persona-detail">产品拍摄角度、场景搭建风格、色调调性、模特选择标准</div>
+        </div>
+      </div>
+
+      <div class="insight-box blue">
+        <div class="insight-title">🏷️ 品牌心智占领路径</div>
+        <div class="insight-text">认知（看见品牌）→ 认同（价值观共鸣）→ 认购（首次购买）→ 认定（复购+推荐）。旗舰店承担的是「认同」和「认定」的关键角色。</div>
+      </div>
+    </section>
+
+    <!-- ===== 第11章：数据诊断与优化闭环 ===== -->
+    <section class="section" id="sec11">
+      <h2><span class="num">11</span> 数据诊断与优化闭环</h2>
+      <p class="desc">关键指标体系、诊断方法、迭代节奏</p>
+
+      <h3>核心诊断指标</h3>
+      <div class="grid-4">
+        <div class="stat-card">
+          <div class="value">CTR</div>
+          <div class="label">点击率 · 主图</div>
+        </div>
+        <div class="stat-card v2">
+          <div class="value">CVR</div>
+          <div class="label">转化率 · 承接</div>
+        </div>
+        <div class="stat-card v3">
+          <div class="value">停留</div>
+          <div class="label">停留时长 · 内容</div>
+        </div>
+        <div class="stat-card v4">
+          <div class="value">退货率</div>
+          <div class="label">预期匹配 · 真实</div>
+        </div>
+      </div>
+
+      <h3>问题定位对照表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:20%">数据表现</th>
+            <th style="width:20%">可能问题</th>
+            <th style="width:30%">排查方向</th>
+            <th style="width:30%">优化建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CTR 低</td>
+            <td>主图吸引力不足</td>
+            <td>{{CTR低的排查方向，如主图角度、差异化、标题关键词}}</td>
+            <td>{{CTR低的优化建议}}</td>
+          </tr>
+          <tr>
+            <td>CVR 低</td>
+            <td>页面承接力弱</td>
+            <td>{{CVR低的排查方向，如卖点清晰度、证据充分性、信任度}}</td>
+            <td>{{CVR低的优化建议}}</td>
+          </tr>
+          <tr>
+            <td>停留时长短</td>
+            <td>内容吸引力不足</td>
+            <td>{{停留短的排查方向，如图文质量、节奏设计}}</td>
+            <td>{{停留短的优化建议}}</td>
+          </tr>
+          <tr>
+            <td>退货率高</td>
+            <td>预期与实物不符</td>
+            <td>{{退货率高的排查方向，如描述准确性、尺寸标注}}</td>
+            <td>{{退货率高的优化建议}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>优化闭环流程</h3>
+      <div class="flow-row">
+        <span class="flow-step">数据监测</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">问题定位</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">假设提出</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">A/B测试</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">迭代上线</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">效果验证</span>
+      </div>
+    </section>
+
+    <!-- ===== 第12章：行动计划 ===== -->
+    <section class="section" id="sec12">
+      <h2><span class="num">12</span> 行动计划与优先级</h2>
+      <p class="desc">30天落地计划、资源需求、预期效果</p>
+
+      <h3>30天落地计划</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--red-light);color:var(--red);">第1-7天 · 第一阶段</span>
+          <div class="tl-title">{{第一阶段核心任务名称，如 主图优化}}</div>
+          <div class="tl-desc">
+            关键任务：{{具体任务列表，如主图重拍/设计、标题优化、五点优化}}<br>
+            交付物：{{交付物列表}}<br>
+            预期效果：{{预期效果，如CTR提升X%}}
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--yellow-light);color:var(--yellow);">第8-21天 · 第二阶段</span>
+          <div class="tl-title">{{第二阶段核心任务名称，如 附图+A+优化}}</div>
+          <div class="tl-desc">
+            关键任务：{{具体任务列表，如7张附图设计、A+页面设计制作}}<br>
+            交付物：{{交付物列表}}<br>
+            预期效果：{{预期效果，如CVR提升X%}}
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="tl-tag" style="background:var(--green-light);color:var(--green);">第22-30天 · 第三阶段</span>
+          <div class="tl-title">{{第三阶段核心任务名称，如 视频+品牌店}}</div>
+          <div class="tl-desc">
+            关键任务：{{具体任务列表，如主视频拍摄制作、品牌旗舰店装修}}<br>
+            交付物：{{交付物列表}}<br>
+            预期效果：{{预期效果，如品牌搜索量增长X%}}
+          </div>
+        </div>
+      </div>
+
+      <h3>优先级矩阵</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>任务项</th>
+            <th>影响程度</th>
+            <th>实现难度</th>
+            <th>建议周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tag-high">P0</span></td>
+            <td>{{P0任务1}}</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>{{低/中/高}}</td>
+            <td>{{时间，如 1周}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-high">P0</span></td>
+            <td>{{P0任务2}}</td>
+            <td>⭐⭐⭐⭐⭐</td>
+            <td>{{低/中/高}}</td>
+            <td>{{时间}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-mid">P1</span></td>
+            <td>{{P1任务1}}</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>{{低/中/高}}</td>
+            <td>{{时间，如 2周}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-mid">P1</span></td>
+            <td>{{P1任务2}}</td>
+            <td>⭐⭐⭐⭐</td>
+            <td>{{低/中/高}}</td>
+            <td>{{时间}}</td>
+          </tr>
+          <tr>
+            <td><span class="tag tag-low">P2</span></td>
+            <td>{{P2任务1}}</td>
+            <td>⭐⭐⭐</td>
+            <td>{{低/中/高}}</td>
+            <td>{{时间，如 3-4周}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box green">
+        <div class="insight-title">🎯 整体预期效果</div>
+        <div class="insight-text">{{整体预期效果总结，如：CTR提升15-25%、CVR提升10-20%、退货率下降X%、品牌搜索量增长30%+。具体数据需根据品类和基础水平调整。}}</div>
+      </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer class="footer">
+      <hr class="divider">
+      <p>VISUAL STRATEGY REPORT · 基于 Atlas 视觉工作流方法论生成</p>
+      <p style="margin-top:4px">© {{年份}} · 品类视觉报告生成器</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // ============================================================
+    //  图表数据占位符 — 生成具体品类报告时替换以下数据
+    // ============================================================
+
+    // 1. 价格带分布柱状图
+    ReportCharts.bar({
+      canvasId: 'priceRangeChart',
+      labels: ['$0-20', '$20-40', '$40-60', '$60-80', '$80-100', '$100-150', '$150+'],
+      datasets: [{
+        label: '产品数量占比 (%)',
+        data: [10, 25, 30, 15, 10, 7, 3],
+        backgroundColor: '#f97316'
+      }],
+      title: '价格带分布（示例数据，请替换）'
+    });
+
+    // 2. 价格带占比环形图
+    ReportCharts.doughnut({
+      canvasId: 'priceDoughnut',
+      labels: ['入门级', '进阶级', '高端级'],
+      data: [35, 45, 20],
+      title: '价格带占比'
+    });
+
+    // 3. 同质化雷达图
+    ReportCharts.radar({
+      canvasId: 'homogeneityRadar',
+      labels: ['主图角度', '配色方案', '卖点表达', '场景选择', '信息密度', '设计风格'],
+      datasets: [
+        {
+          label: '入门级同质化',
+          data: [9, 8, 9, 7, 8, 7],
+          bgColor: 'rgba(249,115,22,0.15)',
+          borderColor: '#f97316',
+          pointColor: '#f97316'
+        },
+        {
+          label: '中高端差异化',
+          data: [5, 4, 4, 5, 3, 4],
+          bgColor: 'rgba(37,99,235,0.15)',
+          borderColor: '#2563eb',
+          pointColor: '#2563eb'
+        }
+      ],
+      title: '视觉同质化程度评估（10分制，分数越高越同质化）'
+    });
+
+    // 4. 评论情感分布横向柱状图
+    ReportCharts.horizontalBar({
+      canvasId: 'sentimentChart',
+      labels: ['非常满意', '比较满意', '一般', '不太满意', '非常不满'],
+      datasets: [{
+        label: '评论占比 (%)',
+        data: [35, 30, 15, 12, 8],
+        backgroundColor: ['#16a34a', '#22c55e', '#ca8a04', '#f97316', '#dc2626']
+      }],
+      title: '评论情感分布（示例数据，请替换）'
+    });
+
+    // 5. 用户画像分布饼图
+    ReportCharts.doughnut({
+      canvasId: 'personaChart',
+      labels: ['画像1', '画像2', '画像3', '画像4', '画像5'],
+      data: [30, 25, 20, 15, 10],
+      title: '用户画像分布'
+    });
+
+    // 6. 核心利益点优先级环形图
+    ReportCharts.doughnut({
+      canvasId: 'benefitChart',
+      labels: ['利益点1', '利益点2', '利益点3', '利益点4', '利益点5', '利益点6'],
+      data: [25, 20, 18, 15, 12, 10],
+      title: '核心利益点优先级'
+    });
+  </script>
+</body>
+</html>

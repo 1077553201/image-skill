@@ -1,26 +1,13 @@
-test_archive_never_moves_or_overwrites_source (test_runtime.RuntimeTests.test_archive_never_moves_or_overwrites_source) ... ok
-test_asset_dependency_is_resolved_only_after_review (test_runtime.RuntimeTests.test_asset_dependency_is_resolved_only_after_review) ... ok
-test_batch_must_have_real_plan_confirmation (test_runtime.RuntimeTests.test_batch_must_have_real_plan_confirmation) ... ok
-test_chinese_text_is_rendered_and_source_is_unchanged (test_runtime.RuntimeTests.test_chinese_text_is_rendered_and_source_is_unchanged) ... ok
-test_comfy_history_mismatch_cannot_be_imported (test_runtime.RuntimeTests.test_comfy_history_mismatch_cannot_be_imported) ... ok
-test_comfy_http_pending_resume_then_typeset_delivery (test_runtime.RuntimeTests.test_comfy_http_pending_resume_then_typeset_delivery) ... ok
-test_completion_requires_all_accepted_files_and_detects_tampering (test_runtime.RuntimeTests.test_completion_requires_all_accepted_files_and_detects_tampering) ... ok
-test_different_workflow_per_job_is_part_of_approval (test_runtime.RuntimeTests.test_different_workflow_per_job_is_part_of_approval) ... ok
-test_failed_connection_validation_keeps_previous_address (test_runtime.RuntimeTests.test_failed_connection_validation_keeps_previous_address) ... ok
-test_failed_visual_review_cannot_enter_delivery (test_runtime.RuntimeTests.test_failed_visual_review_cannot_enter_delivery) ... ok
-test_link_escape_is_rejected (test_runtime.RuntimeTests.test_link_escape_is_rejected) ... ok
-test_missing_glyph_is_rejected (test_runtime.RuntimeTests.test_missing_glyph_is_rejected) ... ok
-test_overflow_and_product_overlap_are_rejected (test_runtime.RuntimeTests.test_overflow_and_product_overlap_are_rejected) ... ok
-test_page_cannot_be_accepted_without_typography (test_runtime.RuntimeTests.test_page_cannot_be_accepted_without_typography) ... ok
-test_pending_agent_prevents_duplicate_and_limit_is_enforced (test_runtime.RuntimeTests.test_pending_agent_prevents_duplicate_and_limit_is_enforced) ... ok
-test_prompt_change_invalidates_batch (test_runtime.RuntimeTests.test_prompt_change_invalidates_batch) ... ok
-test_reject_ambiguous_roots_and_path_escape (test_runtime.RuntimeTests.test_reject_ambiguous_roots_and_path_escape) ... ok
-test_route_change_needs_reconfirmation (test_runtime.RuntimeTests.test_route_change_needs_reconfirmation) ... ok
-test_sample_gate_then_delivery_and_batch_page (test_runtime.RuntimeTests.test_sample_gate_then_delivery_and_batch_page) ... ok
-test_uncertain_remote_submission_is_never_automatically_repeated (test_runtime.RuntimeTests.test_uncertain_remote_submission_is_never_automatically_repeated) ... ok
-test_wrong_dimensions_not_imported (test_runtime.RuntimeTests.test_wrong_dimensions_not_imported) ... ok
+Image-generation Skill verification - 2026-10-16
+Command: python -X utf8 -m unittest discover -s skills/image-generation/tests -v
+Ran 74 tests in 23.392s
+OK; failures=0; errors=0; skipped=0
 
-----------------------------------------------------------------------
-Ran 21 tests in 5.687s
+Suite counts: {"test_runtime.py": 41, "test_typography.py": 16, "test_workflow_validation.py": 17}
+Skill format check: passed
+Python compilation: passed
+Diff whitespace check: passed
 
-OK
+Model output fixtures were synthetic. No paid or real model image generation was invoked.
+Comfy HTTP execution tests ran against a local mock server.
+Earlier remote connection evidence is retained separately in validation.json.

@@ -1,14 +1,70 @@
 {
-  "tests_run": 21,
+  "checked_at": "2026-10-16T10:49:37.399506+00:00",
+  "tests_run": 74,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "passed": true,
+  "duration_seconds": 23.392,
+  "suites": {
+    "test_runtime.py": 41,
+    "test_typography.py": 16,
+    "test_workflow_validation.py": 17
+  },
+  "skill_format_check": "passed",
+  "python_compile_check": "passed",
+  "diff_whitespace_check": "passed",
   "model_outputs_in_tests": "synthetic fixtures only; no real model calls",
   "real_model_generation": "not_executed_no_product_batch_confirmed",
-  "remote_connection": {
+  "coverage": [
+    "unresolved intake and changed facts invalidate approvals",
+    "reference roles, product-reference requirement and effective prompt ordering",
+    "font coverage, safe margins, text overflow and protected-region preflight",
+    "Comfy capability, typed inputs, bounds, cycles, parameter bindings and output reachability",
+    "preflight performs no image upload or generation submission",
+    "uploaded reference filename enums are rechecked using refreshed server metadata",
+    "actual image inspection is required and bound to each render version",
+    "confirmed typography revisions reuse the base image and preserve older delivery files",
+    "non-typography rejections survive later reports and cannot be cleared by retypesetting",
+    "sample and asset changes invalidate downstream acceptance",
+    "uncertain submissions block duplicate attempts and output history is verified"
+  ],
+  "knowledge_base": {
+    "path": "skills/image-generation/references/official-prompt-constraints.md",
+    "scope": "brief official OpenAI, Google and Qwen constraints only; no product parameter or community case library"
+  },
+  "previous_remote_connection_check": {
     "base_url": "http://192.168.1.171:8188",
     "node_count": 1027,
     "verified_at": "2026-10-16T06:11:31.111409+00:00"
+  },
+  "remote_generation_in_this_validation": "not_executed; HTTP tests use localhost mock only",
+  "synthetic_visual_validation": {
+    "status": "visually_reviewed",
+    "test_only": true,
+    "real_model_used": false,
+    "real_product_used": false,
+    "automatic_product_detection": false,
+    "base_unchanged": true,
+    "observations": "Chinese text complete and legible; declared text, protection and safety boxes remain separate.",
+    "local_only_artifacts": true,
+    "files": {
+      "rendered": {
+        "path": "reports/detail_page_validation/optimization/TEST-ONLY-synthetic-reviewed-3627e3c5-rendered.png",
+        "sha256": "09d8c6fa8c2483bd9845a0c5bd2566e52a7625e2c5befdb30ff5ada48347aa1b"
+      },
+      "overlay": {
+        "path": "reports/detail_page_validation/optimization/TEST-ONLY-synthetic-reviewed-3627e3c5-overlay.png",
+        "sha256": "d98acb2dbe84479a7a703a85459e0e4f74683d741c653b7d01ae4279874c10d1"
+      },
+      "numeric_report": {
+        "path": "reports/detail_page_validation/optimization/TEST-ONLY-synthetic-reviewed-3627e3c5-validation.json",
+        "sha256": "9c2cef98ecaeace22f7182b0dab5a462ab393bbfad36c1a6081d4430f7c4af86"
+      },
+      "visual_review": {
+        "path": "reports/detail_page_validation/optimization/TEST-ONLY-synthetic-reviewed-3627e3c5-visual-review.md",
+        "sha256": "27798657322a89c9661f4d3dd799886f1e304168c326a26ff5acd05192e207f8"
+      }
+    }
   }
 }

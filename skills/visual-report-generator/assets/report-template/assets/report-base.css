@@ -1,0 +1,423 @@
+/* ============================================================
+   Visual Growth Planner Pro — Base Report Stylesheet
+   Version: 1.0
+   Usage:  <link rel="stylesheet" href="assets/report-base.css">
+   ============================================================ */
+
+/* ----- Design Tokens ----- */
+:root {
+  /* Background & Surface */
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+
+  /* Text */
+  --text: #1a1a2e;
+  --text-secondary: #555;
+
+  /* Border & Shadow */
+  --border: #e0e0e0;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,.08);
+
+  /* Brand / Accent (Orange) */
+  --accent: #f97316;
+  --accent-light: #fff7ed;
+  --accent-dark: #ea580c;
+
+  /* Semantic Colors */
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --green: #16a34a;
+  --green-light: #f0fdf4;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --yellow: #ca8a04;
+  --yellow-light: #fefce8;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+}
+
+/* ----- Reset & Base ----- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* ----- Header ----- */
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  padding: 48px 24px 40px;
+  margin-bottom: 32px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border: 3px solid rgba(249, 115, 22, 0.15);
+  border-radius: 50%;
+}
+
+.header .badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: .5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -.5px;
+}
+
+.header .subtitle {
+  font-size: 16px;
+  opacity: .75;
+  font-weight: 400;
+  max-width: 640px;
+}
+
+.header .meta {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  font-size: 13px;
+  opacity: .65;
+  flex-wrap: wrap;
+}
+
+/* ----- Section ----- */
+.section {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+
+.section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section h2 .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  color: var(--text);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent-light);
+}
+
+.section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+  color: var(--accent);
+}
+
+.section .desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* ----- Tables ----- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0;
+}
+
+thead th {
+  background: #f1f5f9;
+  color: var(--text);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+
+tbody tr:hover {
+  background: #fafbfc;
+}
+
+/* ----- Tags ----- */
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tag-high   { background: var(--red-light);    color: var(--red);    }
+.tag-mid    { background: var(--yellow-light);  color: var(--yellow); }
+.tag-low    { background: var(--green-light);   color: var(--green);  }
+.tag-info   { background: var(--blue-light);    color: var(--blue);   }
+.tag-accent { background: var(--accent-light);  color: var(--accent); }
+.tag-purple { background: var(--purple-light);  color: var(--purple); }
+
+/* ----- Grid System ----- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr;       gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr;   gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ----- Stat Cards ----- */
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card .value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.stat-card .label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.stat-card.v2 .value { color: var(--blue);   }
+.stat-card.v3 .value { color: var(--green);  }
+.stat-card.v4 .value { color: var(--purple); }
+
+/* ----- Insight Boxes ----- */
+.insight-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 16px 0;
+}
+
+.insight-box.blue  { background: var(--blue-light);   border-left-color: var(--blue);  }
+.insight-box.green { background: var(--green-light);  border-left-color: var(--green); }
+.insight-box.red   { background: var(--red-light);    border-left-color: var(--red);   }
+
+.insight-box .insight-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.insight-box .insight-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ----- Charts ----- */
+.chart-wrap {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.chart-wrap canvas {
+  width: 100% !important;
+  max-height: 300px;
+}
+
+/* ----- Persona Cards ----- */
+.persona-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.persona-card .persona-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.persona-card .persona-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.persona-card .persona-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ----- Flow Steps ----- */
+.flow-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.flow-step {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.flow-arrow {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ----- Strategy Grid ----- */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .strategy-grid { grid-template-columns: 1fr; }
+}
+
+.strategy-item {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.strategy-item .si-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.strategy-item .si-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ----- TOC ----- */
+.toc {
+  columns: 2;
+  gap: 24px;
+  font-size: 13px;
+}
+
+.toc a {
+  display: block;
+  padding: 6px 0;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.toc a:hover {
+  color: var(--accent);
+}
+
+.toc a .toc-num {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .toc { columns: 1; }
+}
+
+/* ----- Footer ----- */
+.footer {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 32px 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 8px 0 24px;
+}
+
+/* ----- Print ----- */
+@media print {
+  body { background: #fff; }
+  .section { box-shadow: none; break-inside: avoid; }
+  .header  { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
