@@ -1,0 +1,12 @@
+{
+  "schema_version":"product_understanding.4b.1",
+  "provider":"image_capable_agent",
+  "image_read_tool":"view_image",
+  "binding":{"source_id":"source_79ba2f7b2a38bb65","source_sha256":"79ba2f7b2a38bb65058fd9ffe74b7bdeaa289f5ded4e56faf9e65a754a7a249e","instance_id":"watch","mask_version":"a8e0a89daba0618ac0d0fddf9209c0196d21bdaddb7f882ec4484493b4a32ebd"},
+  "display_name":"Wristwatch",
+  "visible_view":"angled_front_with_horizontal_bracelet",
+  "facts":{"dial_color":{"value":"Blue dial","status":"observed","sources":["source_79ba2f7b2a38bb65"],"method":"agent_actual_source_photo_read"}},
+  "fact_kinds":{"dial_color":"appearance"},
+  "recommended_intents":["white_hero"],
+  "risks":["Existing real photo and unreviewed segmentation reused; new creative SKU, not a newly acquired photograph","No material composition, movement, water resistance or size inferred","No previous per-product creative layout or prompt profile"]
+}

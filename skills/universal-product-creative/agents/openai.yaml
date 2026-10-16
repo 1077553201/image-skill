@@ -1,0 +1,4 @@
+interface:
+  display_name: "Universal Product Creative"
+  short_description: "Design product campaigns with intake, concepts and page approval"
+  default_prompt: "Use $universal-product-creative to understand my product and goals, propose distinct directions, then show page designs and sketches for my approval before generating."

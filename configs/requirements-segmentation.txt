@@ -1,0 +1,6 @@
+# 已实测的 Windows/Python 3.13.11 CPU 组合。当前直接复用，未执行安装。
+# 完全独立环境可安装这些依赖；未来 RTX 3090 GPU 需另行验证。
+onnxruntime==1.30.0
+numpy==2.4.4
+Pillow==12.2.0
+opencv-python==4.13.0.92

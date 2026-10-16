@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "comfyui": {
+    "base_url": "http://192.168.1.171:8188",
+    "timeout_seconds": 10,
+    "local_root": null
+  },
+  "tools": {
+    "blender_executable": null
+  }
+}
+

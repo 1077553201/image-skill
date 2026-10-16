@@ -1,0 +1,106 @@
+{
+  "product_id": "blue_left",
+  "product_asset": "data/intermediate/phase2a_fix_confirmed_openings_20261014T144510578271Z/blue_left/segmentation_result.json",
+  "agent_analysis": "configs/phase4c/observations/blue_left.json",
+  "output_count": 3,
+  "shot_types": [
+    "studio_photo",
+    "structure_explainer",
+    "specifications"
+  ],
+  "output_sizes": {
+    "default": [
+      1024,
+      1024
+    ],
+    "wide_banner": [
+      1536,
+      864
+    ]
+  },
+  "generation_budget": {
+    "max_new_backgrounds": 1
+  },
+  "review_policy": {
+    "mode": "auto"
+  },
+  "scene": {
+    "level": 1
+  },
+  "creative_direction": {
+    "enabled": true,
+    "product_use": "Visual product presentation",
+    "target_buyer": "Buyers of decorative turntable discs",
+    "campaign_goal": "A restrained product impression, opening structure, then confirmed specifications",
+    "reference_language": "Original direction; no external reference claimed",
+    "mood": "Open form — daylight and measured facts",
+    "photography_scene": "Non-contact vertical backdrop, no white product panel",
+    "information_density": "Different by shot: headline / source detail or structure / sourced information",
+    "sequence_rationale": "A restrained product impression, opening structure, then confirmed specifications",
+    "intent_layouts": {
+      "studio_photo": {
+        "family": "minimal_negative_space",
+        "reason": "Establish identity with a distinct spatial hierarchy"
+      },
+      "structure_explainer": {
+        "family": "asymmetric_editorial",
+        "reason": "Change scale and reading rhythm for visible detail or structure"
+      },
+      "specifications": {
+        "family": "technical_grid",
+        "reason": "Finish with a different placement and information density"
+      }
+    }
+  },
+  "output_dir": "data/outputs/phase4c/blue_left_campaign_v2",
+  "product_facts": {
+    "diameter_cm": {
+      "value": 30,
+      "status": "human_verified",
+      "method": "explicit_prior_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_left",
+        "statement": "转盘直径30厘米，重量500g，材质为复合材料。",
+        "prior_record": "reports/phase4a/product_facts.json"
+      }
+    },
+    "weight_g": {
+      "value": 500,
+      "status": "human_verified",
+      "method": "explicit_prior_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_left",
+        "statement": "转盘直径30厘米，重量500g，材质为复合材料。",
+        "prior_record": "reports/phase4a/product_facts.json"
+      }
+    },
+    "material": {
+      "value": "Composite material",
+      "status": "human_verified",
+      "method": "explicit_prior_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_left",
+        "statement": "转盘直径30厘米，重量500g，材质为复合材料。",
+        "prior_record": "reports/phase4a/product_facts.json"
+      }
+    },
+    "lower_hole": {
+      "value": "Confirmed lower through-hole",
+      "status": "human_verified",
+      "method": "explicit_prior_structure_confirmation",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_left",
+        "statement": "中心金属件下方的小白圆是真实贯穿孔。",
+        "prior_record": "data/intermediate/phase2a_fix_confirmed_openings_20261014T144510578271Z/blue_left/review_record.json"
+      }
+    }
+  }
+}

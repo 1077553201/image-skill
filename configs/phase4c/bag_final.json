@@ -1,0 +1,57 @@
+{
+  "product_id": "bag",
+  "product_asset": "data/intermediate/phase2a/bag/segmentation_result.json",
+  "agent_analysis": "configs/phase4c/observations/bag.json",
+  "output_count": 3,
+  "shot_types": [
+    "brand_signature",
+    "material_detail",
+    "editorial_campaign"
+  ],
+  "output_sizes": {
+    "default": [
+      1024,
+      1024
+    ],
+    "wide_banner": [
+      1536,
+      864
+    ]
+  },
+  "generation_budget": {
+    "max_new_backgrounds": 0
+  },
+  "review_policy": {
+    "mode": "auto"
+  },
+  "scene": {
+    "level": 1
+  },
+  "creative_direction": {
+    "enabled": true,
+    "product_use": "Visual product presentation",
+    "target_buyer": "Buyers drawn to understated fashion accessories",
+    "campaign_goal": "Cover identity, tactile interest, then a graphic everyday accent",
+    "reference_language": "Original direction; no external reference claimed",
+    "mood": "City edition — tactile and editorial",
+    "photography_scene": "Non-contact vertical backdrop, no white product panel",
+    "information_density": "Different by shot: headline / source detail or structure / sourced information",
+    "sequence_rationale": "Cover identity, tactile interest, then a graphic everyday accent",
+    "intent_layouts": {
+      "brand_signature": {
+        "family": "magazine_cover",
+        "reason": "Establish identity with a distinct spatial hierarchy"
+      },
+      "material_detail": {
+        "family": "macro_story",
+        "reason": "Change scale and reading rhythm for visible detail or structure"
+      },
+      "editorial_campaign": {
+        "family": "asymmetric_editorial",
+        "reason": "Finish with a different placement and information density"
+      }
+    }
+  },
+  "output_dir": "data/outputs/phase4c/bag_final",
+  "reuse_backgrounds_from": "data/outputs/phase4c/bag_campaign"
+}

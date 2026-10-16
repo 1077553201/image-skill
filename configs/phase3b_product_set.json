@@ -1,0 +1,14 @@
+{
+  "schema_version": "product_set.3b.1",
+  "output_size_px": [1024, 1024],
+  "shots": ["white_hero", "premium_studio", "selected_advanced_style"],
+  "candidates_per_lifestyle": 2,
+  "max_new_generation_tasks": 4,
+  "seed_base": 316000,
+  "selection": {"reject_hard_failures": true, "retain_alternatives": true, "human_review_required": true},
+  "fallback": {"lifestyle": "premium_studio"},
+  "assets": [
+    {"instance_id": "blue_left", "source_result": "data/intermediate/phase2a_fix_confirmed_openings_20261014T144510578271Z/blue_left/segmentation_result.json", "mode": "strict", "category_hint": "metal accessory", "visible_view": "front", "view_evidence": "user_configuration; not automatic visual classification", "preset": "abstract_premium", "scale": 1.0, "previous_set": "data/outputs/phase3a/blue_left", "background_probes_source_px": [[170,500],[470,500],[315,785],[315,678]]},
+    {"instance_id": "bag", "source_result": "data/intermediate/phase2a/bag/segmentation_result.json", "mode": "preview", "category_hint": "handbag", "visible_view": "front", "view_evidence": "user_configuration; not automatic visual classification", "preset": "editorial_minimal", "scale": 0.85, "previous_set": "data/outputs/phase3a/bag", "background_probes_source_px": [[533,270]]}
+  ]
+}

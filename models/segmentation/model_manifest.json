@@ -1,0 +1,12 @@
+{
+  "name": "BiRefNet-general-lite",
+  "checkpoint": "bb_swin_v1_tiny-epoch_232",
+  "sha256": "5600024376f572a557870a5eb0afb1e5961636bef4e1e22132025467d0f03333",
+  "size_bytes": 224005088,
+  "download_url": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx",
+  "license": "MIT",
+  "license_source": "https://huggingface.co/ZhengPeng7/BiRefNet_lite",
+  "export_source": "https://github.com/danielgatis/rembg/blob/main/rembg/sessions/birefnet_general_lite.py",
+  "environment": ".venv-seg; system-site-packages reused read-only; no package installations",
+  "actual_runtime": "CPUExecutionProvider; GPU not installed/tested"
+}

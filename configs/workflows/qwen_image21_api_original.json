@@ -1,0 +1,131 @@
+{
+  "13": {
+    "inputs": {
+      "aspect_ratio": "9:16 (Portrait Widescreen)",
+      "megapixels": 1.0,
+      "multiple": 8
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "分辨率选择器"
+    }
+  },
+  "451": {
+    "inputs": {
+      "unet_name": "qwen-image-2.1-UC-BF16.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  },
+  "452": {
+    "inputs": {
+      "prompt": "pixel art game UI element, 16-bit pixel art, crisp pixel edges, clean pixel clusters, sharp 1px outlines, limited color palette, flat lighting, front view, symmetrical.\n\nA long horizontal game UI bar frame: a dark metal bar with thick beveled edges, pointed decorative tips at the left and right ends, and an EMPTY recessed slot running through the middle from end to end (the slot is empty, nothing inside it). Dark charcoal metal with warm orange-brown rim light on the top edges, clearly readable. The frame is the only object, centered, filling the whole image.\nThe background is a plain SOLID MAGENTA colour (255, 0, 255).\n\nno fill inside the slot, no progress bar inside, no text, no letters, no numbers, no characters, no UI icons, no watermark.",
+      "negative_prompt": "text, letters, numbers, watermark, signature, icons, arrow, star, characters, filled bar, progress bar inside, gradient background, drop shadow, 3D render, realistic, photo, blurry, (anti-aliasing:1.2), (smooth shading:1.1)",
+      "resolution": 1024,
+      "clip": [
+        "453",
+        0
+      ],
+      "images": []
+    },
+    "class_type": "TextEncodeQwenImage21",
+    "_meta": {
+      "title": "Text Encode Qwen Image 2.1"
+    }
+  },
+  "453": {
+    "inputs": {
+      "clip_name": "qwen3vl_8b_bf16.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "454": {
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "456": {
+    "inputs": {
+      "width": 724,
+      "height": 241,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "457": {
+    "inputs": {
+      "samples": [
+        "458",
+        0
+      ],
+      "vae": [
+        "454",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "458": {
+    "inputs": {
+      "seed": 880907104,
+      "steps": 25,
+      "cfg": 4.5,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "model": [
+        "451",
+        0
+      ],
+      "positive": [
+        "452",
+        0
+      ],
+      "negative": [
+        "452",
+        1
+      ],
+      "latent_image": [
+        "456",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "461": {
+    "inputs": {
+      "filename_prefix": "stamina_frame",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": [
+        "457",
+        0
+      ]
+    },
+    "class_type": "SaveImageAdvanced",
+    "_meta": {
+      "title": "保存图像（高级）"
+    }
+  }
+}

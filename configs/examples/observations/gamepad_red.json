@@ -1,0 +1,210 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "view_image",
+  "binding": {
+    "source_id": "source_1be719f771048634",
+    "source_sha256": "1be719f7710486341cbbc4d267e2067caa2da87c4e99bdb8abb5b2cd6a926e0b",
+    "instance_id": "gamepad_front",
+    "mask_version": "0cd11565c65b18a00d041da049d033303a0916317db0ef11c642000dae1b392b"
+  },
+  "display_name": "黑色游戏手柄（正面）",
+  "visible_view": "front",
+  "facts": {
+    "color": {
+      "value": "Black",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    },
+    "analog_sticks": {
+      "value": 2,
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "visible_left_and_right_sticks_with_textured_rings"
+    },
+    "face_buttons": {
+      "value": 4,
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "visible_ABXY_cluster"
+    },
+    "dpad": {
+      "value": "Cross-shaped directional pad",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    },
+    "center_guide_button": {
+      "value": "Circular guide button with white emblem",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    },
+    "green_wordmark": {
+      "value": "Green illuminated wordmark above center",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    },
+    "aux_buttons": {
+      "value": "Multiple small auxiliary buttons near center",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    },
+    "side_grips": {
+      "value": "Left and right contoured grips",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    },
+    "top_bumpers": {
+      "value": "Shoulder bumper shapes visible at top edge",
+      "status": "observed",
+      "sources": ["source_1be719f771048634"],
+      "method": "direct_source_photo_inspection"
+    }
+  },
+  "fact_kinds": {
+    "color": "appearance",
+    "analog_sticks": "structure",
+    "face_buttons": "structure",
+    "dpad": "structure",
+    "center_guide_button": "structure",
+    "green_wordmark": "appearance",
+    "aux_buttons": "structure",
+    "side_grips": "structure",
+    "top_bumpers": "structure",
+    "price_positioning": "performance",
+    "category": "appearance",
+    "dimensions": "quantity",
+    "weight": "quantity",
+    "material": "material",
+    "compatibility": "compatibility"
+  },
+  "features": [
+    {
+      "title": "双摇杆布局",
+      "description": "左右摇杆带纹理防滑圈，正面清晰可见。",
+      "fact_ids": ["analog_sticks", "side_grips"]
+    },
+    {
+      "title": "十字键与四颗面键",
+      "description": "十字方向键与 ABXY 四键齐全，按键区完整。",
+      "fact_ids": ["dpad", "face_buttons"]
+    },
+    {
+      "title": "中心功能区",
+      "description": "中心圆形导引键、绿色标识与多颗辅助按键。",
+      "fact_ids": ["center_guide_button", "green_wordmark", "aux_buttons"]
+    }
+  ],
+  "detail_regions": [
+    {
+      "bbox": [250, 520, 240, 240],
+      "label": "左摇杆与纹理圈",
+      "fact_ids": ["analog_sticks"]
+    },
+    {
+      "bbox": [1080, 580, 260, 260],
+      "label": "ABXY 面键区",
+      "fact_ids": ["face_buttons"]
+    },
+    {
+      "bbox": [380, 850, 300, 300],
+      "label": "十字方向键",
+      "fact_ids": ["dpad"]
+    },
+    {
+      "bbox": [620, 480, 280, 240],
+      "label": "中心导引键与绿色标识",
+      "fact_ids": ["center_guide_button", "green_wordmark"]
+    }
+  ],
+  "recommended_intents": [
+    "white_hero",
+    "studio_photo",
+    "feature_infographic",
+    "structure_explainer",
+    "material_detail",
+    "lifestyle_scene",
+    "editorial_campaign",
+    "wide_banner"
+  ],
+  "copy": {
+    "white_hero": {
+      "headline": "黑色手柄，按键齐全",
+      "body": "双摇杆 · 十字键 · 四面键，正面一目了然。",
+      "fact_ids": ["color", "analog_sticks", "dpad", "face_buttons"]
+    },
+    "studio_photo": {
+      "headline": "红色舞台上的主角",
+      "body": "黑色机身在红色光影里轮廓分明。",
+      "fact_ids": ["color"]
+    },
+    "feature_infographic": {
+      "headline": "看得见的操控分区",
+      "body": "摇杆、十字键、面键与辅助键，分区清晰。",
+      "fact_ids": ["analog_sticks", "dpad", "face_buttons", "aux_buttons"]
+    },
+    "structure_explainer": {
+      "headline": "正面结构拆解",
+      "body": "双摇杆对称，中心功能区集中，握把向两侧延伸。",
+      "fact_ids": ["analog_sticks", "center_guide_button", "side_grips"]
+    },
+    "material_detail": {
+      "headline": "原图细节",
+      "body": "仅截取源照片中真实可见的按键与摇杆纹理。",
+      "fact_ids": ["analog_sticks", "face_buttons"]
+    },
+    "lifestyle_scene": {
+      "headline": "开箱即玩的氛围",
+      "body": "以编辑式红色场景呈现这台游戏手柄。",
+      "fact_ids": ["color"]
+    },
+    "editorial_campaign": {
+      "headline": "好上手，更好入手",
+      "body": "价格友好的游戏手柄，按键布局清晰直观。",
+      "fact_ids": ["price_positioning", "face_buttons"]
+    },
+    "wide_banner": {
+      "headline": "黑控 · 红调",
+      "body": "游戏手柄 · 双摇杆 · 四面键",
+      "fact_ids": ["color", "analog_sticks", "face_buttons"]
+    }
+  },
+  "style": {
+    "name": "Crimson retail campaign",
+    "dark_background": true,
+    "excluded_copy_tokens": ["Xbox", "Razer", "Microsoft", "Elite", "Wireless", "Bluetooth", "Official", "正品", "官方旗舰"],
+    "palette": {
+      "paper": "#fff5f2",
+      "white": "#ffffff",
+      "ink": "#2a0a0a",
+      "muted": "#7a3a3a",
+      "navy": "#3b0d12",
+      "blue": "#c41e3a",
+      "cyan": "#f07178",
+      "line": "#e8a0a0"
+    },
+    "background_briefs": {
+      "studio": {
+        "prompt": "Empty premium product campaign background ONLY. Deep crimson and wine-red gradient field, soft warm spotlight from upper left, smooth dark red floorless void, gentle vignette, refined retail studio atmosphere. Generous clean negative space on left and top for white typography. No product, no gamepad, no controller, no console, no furniture, no people, no text, no logo, no watermark.",
+        "negative": "product, gamepad, controller, console, furniture, person, people, text, logo, brand, watermark, clutter, bright white studio"
+      },
+      "environment": {
+        "prompt": "Empty contemporary gaming lounge interior for an editorial advertising panel. Warm red ambient lighting, dark charcoal walls with a soft red accent glow, refined blurred shelving in far background, no visible screens or devices in center. Real material depth, cinematic but clean, generous negative space. A flat advertisement panel will be placed over the scene; no physical product contact should be implied. No gamepad, no controller, no console, no people, no text, no logos.",
+        "negative": "gamepad, controller, console, screen, monitor, people, person, hands, text, logo, brand, clutter, mess"
+      }
+    }
+  },
+  "risks": [
+    "仅正面视图，背面、接口、扳机行程未知",
+    "尺寸、重量、续航、连接方式均无用户证据",
+    "价格仅用户口述“便宜”，无具体金额，不作数值规格",
+    "机身 Xbox/Razer 标识为源图像素，不延伸兼容性或官方合作声明",
+    "源图右上角 Designed for Xbox 角标在手柄 ROI 之外，不计入产品本体",
+    "遮罩 needs_human_review，本轮使用 preview 模式"
+  ]
+}

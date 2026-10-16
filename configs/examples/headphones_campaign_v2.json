@@ -1,0 +1,31 @@
+{
+  "product_id": "headphones",
+  "product_asset": "data/intermediate/phase2a/headphones/segmentation_result.json",
+  "product_category": "over-ear headphones",
+  "agent_analysis": "configs/examples/observations/headphones_v2.json",
+  "reference_catalog": "data/references/amazon_B0HGGJZ92H/catalog.json",
+  "reference_analysis": "data/references/amazon_B0HGGJZ92H/reference_style.json",
+  "output_count": 7,
+  "output_sizes": {
+    "default": [
+      1024,
+      1024
+    ],
+    "wide_banner": [
+      1536,
+      864
+    ]
+  },
+  "generation_budget": {
+    "max_new_backgrounds": 2
+  },
+  "review_policy": {
+    "mode": "preview"
+  },
+  "scene": {
+    "level": 2,
+    "presentation": "editorial_panel"
+  },
+  "output_dir": "data/outputs/phase4b/headphones_v2",
+  "reuse_backgrounds_from": "data/outputs/phase4b/headphones"
+}

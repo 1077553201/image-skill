@@ -1,0 +1,11 @@
+{
+  "id": "ebay",
+  "site": "ebay.com",
+  "category": null,
+  "sources": [
+    "https://www.ebay.com/help/policies/listing-policies/picture-policy?id=4370"
+  ],
+  "checked_at": "2026-10-15",
+  "verification": "Official public picture policy read: minimum 500 px; no added text/artwork/marketing/borders. Marketing cards must not be exported as listing photos.",
+  "marketing_images_are_main_images": false
+}

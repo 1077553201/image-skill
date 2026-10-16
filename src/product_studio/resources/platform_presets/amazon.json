@@ -1,0 +1,12 @@
+{
+  "id": "amazon",
+  "site": "amazon.com",
+  "category": null,
+  "main_min_longest_axis_fill": 0.85,
+  "sources": [
+    "https://sellercentral.amazon.com/help/hub/reference/external/G1881?locale=en_us"
+  ],
+  "checked_at": "2026-10-15",
+  "verification": "Search excerpt available; official page body requires JavaScript/login. Category-specific review still required.",
+  "marketing_images_are_main_images": false
+}

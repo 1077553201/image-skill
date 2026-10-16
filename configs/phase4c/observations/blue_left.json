@@ -1,0 +1,142 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "view_image",
+  "binding": {
+    "source_id": "source_85214cda5c76a02f",
+    "source_sha256": "85214cda5c76a02ff58558cb9254c803730027bff66e6dfbc955b47f619c5ac4",
+    "instance_id": "blue_left",
+    "mask_version": "50925f5bfb9d14acbf7c867de328f475f2f437b82adf6943a6e15ba08b67f495"
+  },
+  "display_name": "Blue decorative disc",
+  "visible_view": "front",
+  "facts": {
+    "color": {
+      "value": "Blue",
+      "status": "observed",
+      "sources": [
+        "source_85214cda5c76a02f"
+      ],
+      "method": "actual_source_photo_and_prior_hash_bound_analysis"
+    },
+    "large_openings": {
+      "value": 3,
+      "status": "observed",
+      "sources": [
+        "source_85214cda5c76a02f"
+      ],
+      "method": "actual_visible_photo_not_a_default_hole_count"
+    }
+  },
+  "fact_kinds": {
+    "color": "appearance",
+    "large_openings": "structure",
+    "lower_hole": "structure",
+    "diameter_cm": "quantity",
+    "weight_g": "quantity",
+    "material": "material",
+    "central_lower_through_hole": "structure"
+  },
+  "features": [
+    {
+      "title": "Three large openings",
+      "description": "Openwork profile",
+      "fact_ids": [
+        "large_openings"
+      ]
+    },
+    {
+      "title": "Lower through-hole",
+      "description": "Circular opening",
+      "fact_ids": [
+        "central_lower_through_hole"
+      ]
+    }
+  ],
+  "detail_regions": [
+    {
+      "bbox": [
+        254,
+        554,
+        125,
+        159
+      ],
+      "label": "Center detail",
+      "fact_ids": [
+        "lower_hole"
+      ]
+    },
+    {
+      "bbox": [
+        367,
+        529,
+        174,
+        133
+      ],
+      "label": "Opening edge",
+      "fact_ids": [
+        "large_openings"
+      ]
+    }
+  ],
+  "recommended_intents": [
+    "studio_photo",
+    "structure_explainer",
+    "specifications"
+  ],
+  "style": {
+    "name": "Open form — daylight and measured facts",
+    "palette": {
+      "paper": "#f4f1e8",
+      "white": "#ffffff",
+      "ink": "#14323e",
+      "muted": "#3c555c",
+      "navy": "#14323e",
+      "blue": "#087eaf",
+      "cyan": "#b5dfed",
+      "line": "#568995"
+    },
+    "dark_background": false,
+    "background_briefs": {
+      "studio": {
+        "prompt": "Completely empty warm ivory vertical photography backdrop with very soft daylight and delicate vertical plaster texture at far right. Broad calm bright cream negative space, no floor, no horizon, no table, no objects, no typography.",
+        "negative": "object, product, headphones, bag, disc, text, logo, table, floor, person, merchandise"
+      }
+    }
+  },
+  "risks": [
+    "Unknown thickness, reverse geometry, compatibility and package contents",
+    "Same front photograph, not new angles",
+    "Small original detail regions limit real resolution"
+  ],
+  "consumer_copy": {
+    "studio_photo": {
+      "headline": "OPEN BY\nDESIGN.",
+      "body": "Blue openwork disc.",
+      "fact_ids": [
+        "color",
+        "large_openings"
+      ]
+    },
+    "structure_explainer": {
+      "headline": "Form in\nthe open.",
+      "body": "Three large openings. A lower through-hole.",
+      "fact_ids": [
+        "large_openings",
+        "central_lower_through_hole"
+      ]
+    },
+    "specifications": {
+      "headline": "THE MEASURE\nOF THE FORM.",
+      "body": "Composite material.",
+      "fact_ids": [
+        "material"
+      ]
+    }
+  },
+  "internal_notes": {
+    "production": "Same source view; no physical contact invented; final asset pending",
+    "unknown_properties": "No unsupported performance, composition or compatibility claims",
+    "observed_with": "view_image actual original image and previews"
+  }
+}

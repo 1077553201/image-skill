@@ -1,0 +1,9 @@
+{
+  "product_id":"new_watch_creative",
+  "product_asset":"data/intermediate/phase2a/watch/segmentation_result.json",
+  "agent_analysis":"configs/examples/observations/cold_start_watch.json",
+  "output_count":1,
+  "shot_types":["white_hero"],
+  "generation_budget":{"max_new_backgrounds":0},
+  "output_dir":"data/outputs/phase4b/cold_start_watch"
+}

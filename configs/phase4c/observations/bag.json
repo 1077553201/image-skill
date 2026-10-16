@@ -1,0 +1,153 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "view_image",
+  "binding": {
+    "source_id": "source_00e3bc44d0bfd91b",
+    "source_sha256": "00e3bc44d0bfd91befa316f9156b5209f1f990dbe7b7335fa631bb9c3a02f31a",
+    "instance_id": "bag",
+    "mask_version": "ecbf10b9e7061742102d5bb047579346bba7d6eb43049d0b52d3b762e156ea1b"
+  },
+  "display_name": "Top-handle handbag",
+  "visible_view": "near_front",
+  "facts": {
+    "color": {
+      "value": "Brown",
+      "status": "observed",
+      "sources": [
+        "source_00e3bc44d0bfd91b"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "handle": {
+      "value": "Top handle",
+      "status": "observed",
+      "sources": [
+        "source_00e3bc44d0bfd91b"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "finish": {
+      "value": "Visible textured surface",
+      "status": "observed",
+      "sources": [
+        "source_00e3bc44d0bfd91b"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "clasp": {
+      "value": "Gold-tone front clasp",
+      "status": "observed",
+      "sources": [
+        "source_00e3bc44d0bfd91b"
+      ],
+      "method": "agent_actual_photo_read"
+    }
+  },
+  "fact_kinds": {
+    "color": "appearance",
+    "handle": "structure",
+    "finish": "appearance",
+    "clasp": "structure"
+  },
+  "features": [
+    {
+      "title": "Top handle",
+      "description": "A defined silhouette",
+      "fact_ids": [
+        "handle"
+      ]
+    },
+    {
+      "title": "Textured finish",
+      "description": "Visible surface detail",
+      "fact_ids": [
+        "finish"
+      ]
+    },
+    {
+      "title": "Gold-tone clasp",
+      "description": "A warm focal point",
+      "fact_ids": [
+        "clasp"
+      ]
+    }
+  ],
+  "detail_regions": [
+    {
+      "bbox": [
+        225,
+        390,
+        620,
+        430
+      ],
+      "label": "Grained finish and clasp",
+      "fact_ids": [
+        "finish"
+      ]
+    }
+  ],
+  "recommended_intents": [
+    "brand_signature",
+    "material_detail",
+    "editorial_campaign"
+  ],
+  "style": {
+    "name": "City edition — tactile and editorial",
+    "palette": {
+      "paper": "#f1e9df",
+      "white": "#ffffff",
+      "ink": "#211c29",
+      "muted": "#594b59",
+      "navy": "#292232",
+      "blue": "#66516c",
+      "cyan": "#d8bfb3",
+      "line": "#826a84"
+    },
+    "dark_background": false,
+    "background_briefs": {
+      "studio": {
+        "prompt": "A completely empty matte plaster vertical photography backdrop, pale warm greige color, subtle diffuse window light with a delicate diagonal shadow restricted to far upper right, broad quiet off-white negative space across center and top. Continuous seamless vertical color field, no horizon, no table, no floor, no objects, no typography.",
+        "negative": "object, product, headphones, bag, disc, text, logo, table, floor, person, merchandise"
+      }
+    },
+    "font_regular": "C:/Windows/Fonts/georgia.ttf",
+    "font_bold": "C:/Windows/Fonts/georgiab.ttf"
+  },
+  "risks": [
+    "Material composition, dimensions, weight and capacity unknown",
+    "Mask pending review; no strict output",
+    "No actual carrying, contact, strap loading or interior-compartment claim"
+  ],
+  "consumer_copy": {
+    "brand_signature": {
+      "headline": "CARRY THE MOMENT.",
+      "body": "Brown tones. A gold-tone accent.",
+      "fact_ids": [
+        "color",
+        "clasp"
+      ]
+    },
+    "material_detail": {
+      "headline": "A closer accent.",
+      "body": "Grained finish. Front clasp.",
+      "fact_ids": [
+        "finish",
+        "clasp"
+      ]
+    },
+    "editorial_campaign": {
+      "headline": "An everyday\naccent.",
+      "body": "A top-handle silhouette in warm brown.",
+      "fact_ids": [
+        "handle",
+        "color"
+      ]
+    }
+  },
+  "internal_notes": {
+    "production": "Same source view; no physical contact invented; final asset pending",
+    "unknown_properties": "No unsupported performance, composition or compatibility claims",
+    "observed_with": "view_image actual original image and previews"
+  }
+}

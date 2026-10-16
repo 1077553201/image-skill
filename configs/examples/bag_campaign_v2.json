@@ -1,0 +1,34 @@
+{
+  "product_id": "bag",
+  "product_asset": "data/intermediate/phase2a/bag/segmentation_result.json",
+  "product_category": "handbag",
+  "agent_analysis": "configs/examples/observations/bag.json",
+  "reference_catalog": "data/references/phase4b_fashion_local/catalog.json",
+  "reference_analysis": "data/references/phase4b_fashion_local/reference_style.json",
+  "product_facts": {},
+  "platform": "generic",
+  "language": "en",
+  "output_count": 6,
+  "output_sizes": {
+    "default": [
+      1024,
+      1024
+    ],
+    "wide_banner": [
+      1536,
+      864
+    ]
+  },
+  "generation_budget": {
+    "max_new_backgrounds": 2
+  },
+  "review_policy": {
+    "mode": "preview"
+  },
+  "scene": {
+    "level": 2,
+    "presentation": "editorial_panel"
+  },
+  "output_dir": "data/outputs/phase4b/bag_v2",
+  "reuse_backgrounds_from": "data/outputs/phase4b/bag"
+}

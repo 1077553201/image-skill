@@ -1,0 +1,1101 @@
+{
+  "schema_version": "creative_config.4a.1",
+  "instance_id": "blue_left",
+  "mode": "strict",
+  "source_result": "data/intermediate/phase2a_fix_confirmed_openings_20261014T144510578271Z/blue_left/segmentation_result.json",
+  "reference_catalog": "data/references/amazon_B0HGGJZ92H/catalog.json",
+  "analysis_path": "data/references/amazon_B0HGGJZ92H/reference_style.json",
+  "facts_path": "reports/phase4a/product_facts.json",
+  "output_dir": "data/outputs/phase4a/blue_left",
+  "style": {
+    "name": "Blue Form / original technical editorial",
+    "palette": {
+      "paper": "#f5f6f8",
+      "white": "#ffffff",
+      "ink": "#152736",
+      "muted": "#4d6474",
+      "navy": "#0b2035",
+      "blue": "#087cae",
+      "cyan": "#86e4f1",
+      "line": "#b6c7d3"
+    },
+    "font_regular": "C:/Windows/Fonts/arial.ttf",
+    "font_bold": "C:/Windows/Fonts/arialbd.ttf",
+    "safe_margin_px": 56,
+    "language": "en",
+    "font_note": "Existing local Arial, not the reference brand font. Font files are not redistributed.",
+    "product_rgb_editing": false,
+    "copy_vocabulary": [
+      "A",
+      "APPEARANCE",
+      "BLUE",
+      "Blue",
+      "COMPOSITE",
+      "Center",
+      "Central",
+      "Color",
+      "Composite",
+      "DETAIL",
+      "Decorative",
+      "Details",
+      "Diameter",
+      "Dimensions",
+      "Distinctly",
+      "FOCUS",
+      "FORM",
+      "FRONT",
+      "IN",
+      "In",
+      "Look",
+      "MATERIAL",
+      "Material",
+      "ORIGINAL",
+      "Open",
+      "Opening",
+      "Overview",
+      "PHOTOGRAPH",
+      "Product",
+      "SPECIFICATIONS",
+      "STRUCTURE",
+      "The",
+      "VIEW",
+      "Weight",
+      "accent",
+      "and",
+      "blue",
+      "by",
+      "closer",
+      "cm",
+      "design",
+      "detail",
+      "diameter",
+      "different",
+      "disc",
+      "edge",
+      "essentials",
+      "finish",
+      "for",
+      "from",
+      "front",
+      "g",
+      "hole",
+      "kind",
+      "large",
+      "lower",
+      "material",
+      "new",
+      "of",
+      "openings",
+      "original",
+      "owner",
+      "photograph",
+      "presence",
+      "product",
+      "setup",
+      "supplied",
+      "the",
+      "through",
+      "turntable",
+      "view",
+      "visual",
+      "weight",
+      "with",
+      "your"
+    ],
+    "vocabulary_note": "Agent-authored controlled-copy vocabulary; not a general English spell checker. Final typography reviewed by Agent, then user."
+  },
+  "shots": [
+    {
+      "shot_id": "01_white_hero",
+      "role": "white_hero",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 1.4,
+      "center": [
+        0.5,
+        0.5
+      ],
+      "copy": "",
+      "brief": "Unadorned single-product main-image candidate, pure white, no text or shadow",
+      "reference_methods": [
+        "isolation"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [],
+      "background_id": null,
+      "background_color": "white",
+      "uses_qwenimage": false,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "amazon",
+      "export_role": "main_candidate"
+    },
+    {
+      "shot_id": "02_signature",
+      "role": "signature",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 0.9,
+      "center": [
+        0.5,
+        0.62
+      ],
+      "copy": "A different\nkind of blue.",
+      "brief": "Premium brand-free editorial hero with original frontal product and dark negative space",
+      "reference_methods": [
+        "minimal focal point",
+        "controlled cool light"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "color",
+        "name"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "FORM / BLUE",
+          "x": 64,
+          "y": 60,
+          "size": 20,
+          "color": "cyan",
+          "bold": true,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "A different\nkind of blue.",
+          "x": 64,
+          "y": 112,
+          "size": 64,
+          "color": "white",
+          "bold": true,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 850
+        },
+        {
+          "text": "Decorative turntable disc",
+          "x": 64,
+          "y": 939,
+          "size": 23,
+          "color": "white",
+          "bold": false,
+          "fact_ids": [
+            "name"
+          ],
+          "max_width": 900
+        }
+      ],
+      "background_id": "signature",
+      "background_color": "paper",
+      "uses_qwenimage": true,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate"
+    },
+    {
+      "shot_id": "03_material",
+      "role": "material",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 0.68,
+      "center": [
+        0.7,
+        0.4
+      ],
+      "copy": "Composite.\nDistinctly blue.",
+      "brief": "Material and appearance benefit card; no unverified acoustic or engineering benefit",
+      "reference_methods": [
+        "short copy hierarchy",
+        "fact grouping"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "material",
+        "color",
+        "weight_g"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "MATERIAL / APPEARANCE",
+          "x": 64,
+          "y": 62,
+          "size": 20,
+          "color": "blue",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "Composite.\nDistinctly\nblue.",
+          "x": 64,
+          "y": 139,
+          "size": 56,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "material",
+            "color"
+          ],
+          "max_width": 400
+        },
+        {
+          "text": "Composite material",
+          "x": 64,
+          "y": 768,
+          "size": 28,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "material"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "Blue finish",
+          "x": 64,
+          "y": 814,
+          "size": 25,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "500 g",
+          "x": 64,
+          "y": 900,
+          "size": 48,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "weight_g"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "Product weight",
+          "x": 270,
+          "y": 917,
+          "size": 22,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [
+            "weight_g"
+          ],
+          "max_width": 900
+        }
+      ],
+      "background_id": null,
+      "background_color": "paper",
+      "uses_qwenimage": false,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate",
+      "rules": [
+        {
+          "xy": [
+            64,
+            726,
+            960,
+            726
+          ],
+          "color": "line",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "shot_id": "04_detail",
+      "role": "detail",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 0.57,
+      "center": [
+        0.27,
+        0.5
+      ],
+      "copy": "Look closer.",
+      "brief": "Overview plus two explicitly labelled real-photo crops; maximum 1.6x interpolation, no generated texture",
+      "reference_methods": [
+        "real detail",
+        "short label"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "center_lower_opening",
+        "large_openings"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "DETAIL / ORIGINAL PHOTOGRAPH",
+          "x": 64,
+          "y": 62,
+          "size": 20,
+          "color": "blue",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "Look closer.",
+          "x": 64,
+          "y": 111,
+          "size": 66,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "Overview",
+          "x": 64,
+          "y": 753,
+          "size": 22,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "01  Center detail",
+          "x": 556,
+          "y": 240,
+          "size": 24,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "02  Opening edge",
+          "x": 556,
+          "y": 609,
+          "size": 24,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "Details from the original front-view photograph.",
+          "x": 64,
+          "y": 919,
+          "size": 22,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [],
+          "max_width": 900
+        }
+      ],
+      "background_id": null,
+      "background_color": "paper",
+      "uses_qwenimage": false,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate",
+      "details": [
+        {
+          "source_bbox": [
+            254,
+            554,
+            125,
+            159
+          ],
+          "box": [
+            556,
+            289,
+            344,
+            260
+          ],
+          "label": "center_detail"
+        },
+        {
+          "source_bbox": [
+            367,
+            529,
+            174,
+            133
+          ],
+          "box": [
+            556,
+            658,
+            344,
+            239
+          ],
+          "label": "opening_edge"
+        }
+      ]
+    },
+    {
+      "shot_id": "05_structure",
+      "role": "structure",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 0.94,
+      "center": [
+        0.5,
+        0.54
+      ],
+      "copy": "Open by design.",
+      "brief": "Explain actual visible openings with under-foreground guide lines, retain real dark inner edges",
+      "reference_methods": [
+        "real structure labels",
+        "clear hierarchy"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "large_openings",
+        "center_lower_opening"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "STRUCTURE / FRONT VIEW",
+          "x": 64,
+          "y": 60,
+          "size": 20,
+          "color": "blue",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "Open by design.",
+          "x": 64,
+          "y": 108,
+          "size": 60,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "3 large openings",
+          "x": 64,
+          "y": 864,
+          "size": 32,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "large_openings"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "Central lower through-hole",
+          "x": 64,
+          "y": 914,
+          "size": 26,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [
+            "center_lower_opening"
+          ],
+          "max_width": 900
+        }
+      ],
+      "background_id": null,
+      "background_color": "paper",
+      "uses_qwenimage": false,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate",
+      "callouts": [
+        {
+          "source_point": [
+            315,
+            785
+          ],
+          "via": [
+            832,
+            839
+          ],
+          "end": [
+            852,
+            864
+          ],
+          "fact_ids": [
+            "large_openings"
+          ]
+        },
+        {
+          "source_point": [
+            315,
+            678
+          ],
+          "via": [
+            832,
+            901
+          ],
+          "end": [
+            852,
+            914
+          ],
+          "fact_ids": [
+            "center_lower_opening"
+          ]
+        }
+      ]
+    },
+    {
+      "shot_id": "06_campaign",
+      "role": "campaign",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 0.83,
+      "center": [
+        0.34,
+        0.6
+      ],
+      "copy": "Color with\npresence.",
+      "brief": "Airy promotional graphic with independent abstract cool light; suspended front display, no use/installation claim",
+      "reference_methods": [
+        "narrative variation",
+        "restrained atmosphere"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "color"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "BLUE / IN FOCUS",
+          "x": 64,
+          "y": 60,
+          "size": 20,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "Color with\npresence.",
+          "x": 475,
+          "y": 125,
+          "size": 58,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 490
+        },
+        {
+          "text": "A blue accent for your visual setup.",
+          "x": 64,
+          "y": 922,
+          "size": 25,
+          "color": "ink",
+          "bold": false,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 900
+        }
+      ],
+      "background_id": "campaign",
+      "background_color": "paper",
+      "uses_qwenimage": true,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate"
+    },
+    {
+      "shot_id": "07_specifications",
+      "role": "specifications",
+      "size_px": [
+        1024,
+        1024
+      ],
+      "scale": 0.78,
+      "center": [
+        0.31,
+        0.53
+      ],
+      "copy": "The essentials.",
+      "brief": "Dimensional and material specification card, based only on new user statements; compatibility unknown",
+      "reference_methods": [
+        "facts not borrowed from competitor",
+        "dimension guide"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "diameter_cm",
+        "weight_g",
+        "material"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "SPECIFICATIONS",
+          "x": 64,
+          "y": 60,
+          "size": 20,
+          "color": "blue",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "The essentials.",
+          "x": 64,
+          "y": 112,
+          "size": 60,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [],
+          "max_width": 900
+        },
+        {
+          "text": "30 cm",
+          "x": 650,
+          "y": 302,
+          "size": 59,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "diameter_cm"
+          ],
+          "max_width": 310
+        },
+        {
+          "text": "Diameter",
+          "x": 652,
+          "y": 376,
+          "size": 24,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [
+            "diameter_cm"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "500 g",
+          "x": 650,
+          "y": 480,
+          "size": 59,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "weight_g"
+          ],
+          "max_width": 310
+        },
+        {
+          "text": "Weight",
+          "x": 652,
+          "y": 555,
+          "size": 24,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [
+            "weight_g"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "Composite",
+          "x": 650,
+          "y": 649,
+          "size": 37,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "material"
+          ],
+          "max_width": 310
+        },
+        {
+          "text": "Material",
+          "x": 652,
+          "y": 702,
+          "size": 24,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [
+            "material"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "30 cm diameter",
+          "x": 193,
+          "y": 846,
+          "size": 25,
+          "color": "ink",
+          "bold": true,
+          "fact_ids": [
+            "diameter_cm"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "Dimensions and weight supplied by the product owner.",
+          "x": 64,
+          "y": 923,
+          "size": 22,
+          "color": "muted",
+          "bold": false,
+          "fact_ids": [],
+          "max_width": 900
+        }
+      ],
+      "background_id": null,
+      "background_color": "paper",
+      "uses_qwenimage": false,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate",
+      "dimension_line": {
+        "y": 816,
+        "claim": "diameter_cm"
+      }
+    },
+    {
+      "shot_id": "08_wide_banner",
+      "role": "wide_banner",
+      "size_px": [
+        1536,
+        864
+      ],
+      "scale": 1.0,
+      "center": [
+        0.74,
+        0.52
+      ],
+      "copy": "A new accent.\nIn blue.",
+      "brief": "Wide original marketing banner; no invented brand, no manufacturer logo",
+      "reference_methods": [
+        "wide negative space",
+        "short headline"
+      ],
+      "audience": "Design-conscious product buyers",
+      "fact_ids": [
+        "color",
+        "material",
+        "name"
+      ],
+      "source_material": "Only reviewed blue_left foreground; original visible view",
+      "composition": "New composition with independent margins and hierarchy",
+      "palette": {
+        "paper": "#f5f6f8",
+        "white": "#ffffff",
+        "ink": "#152736",
+        "muted": "#4d6474",
+        "navy": "#0b2035",
+        "blue": "#087cae",
+        "cyan": "#86e4f1",
+        "line": "#b6c7d3"
+      },
+      "layers": [
+        "independent_background",
+        "graphic_guides",
+        "reviewed_product",
+        "true_photo_detail_if_requested",
+        "deterministic_type"
+      ],
+      "text": [
+        {
+          "text": "BLUE / COMPOSITE",
+          "x": 64,
+          "y": 75,
+          "size": 22,
+          "color": "cyan",
+          "bold": true,
+          "fact_ids": [
+            "color",
+            "material"
+          ],
+          "max_width": 900
+        },
+        {
+          "text": "A new accent.\nIn blue.",
+          "x": 64,
+          "y": 215,
+          "size": 76,
+          "color": "white",
+          "bold": true,
+          "fact_ids": [
+            "color"
+          ],
+          "max_width": 650
+        },
+        {
+          "text": "Decorative turntable disc",
+          "x": 64,
+          "y": 656,
+          "size": 28,
+          "color": "white",
+          "bold": false,
+          "fact_ids": [
+            "name"
+          ],
+          "max_width": 900
+        }
+      ],
+      "background_id": "wide",
+      "background_color": "paper",
+      "uses_qwenimage": true,
+      "authenticity_limits": [
+        "Front photo only; no backside or invented installation",
+        "Generated environment is decorative, not physical product evidence",
+        "Final asset approval pending"
+      ],
+      "quality_conditions": [
+        "No clipped product",
+        "No copied competitor pixels or words",
+        "Source-bound facts",
+        "Text inside safe area and readable"
+      ],
+      "target_platform": "generic",
+      "export_role": "marketing_review_candidate"
+    }
+  ],
+  "backgrounds": {
+    "signature": {
+      "width": 1024,
+      "height": 1024,
+      "seed": 4101501,
+      "prompt": "Empty premium editorial background only. Deep midnight navy field, exceptionally clean soft tonal falloff, subtle cobalt illumination at outer right edge, barely perceptible cool silver haze, dark uniform upper left area reserved for readable white typography. Quiet photographic light, no horizon, no surface, no product, no geometric emblem. Generous negative space, sophisticated restrained blue palette. Front-plane graphic composition, no physical tabletop or perspective.",
+      "negative": "product, object, disc, turntable, computer, device, logo, symbol, text, typography, letters, number, watermark, floor, tabletop, pedestal, horizon, furniture, frame, border, prop, busy pattern, hard shadow, visible room, product silhouette"
+    },
+    "campaign": {
+      "width": 1024,
+      "height": 1024,
+      "seed": 4101502,
+      "prompt": "Empty high-end abstract commercial background only. Almost white cool ice grey field with extremely soft desaturated blue atmospheric illumination near bottom left, clean pale neutral top and right region for dark headline. Subtle photographic gradient, broad diffused light, airy generous negative space. No recognizable shapes, no object, no floor, no wall junction, no horizon, no pedestal, no typography. Frontal graphic environment, understated contemporary product editorial palette.",
+      "negative": "product, object, disc, turntable, computer, device, logo, symbol, text, typography, letters, number, watermark, floor, tabletop, pedestal, horizon, furniture, frame, border, prop, busy pattern, hard shadow, visible room, product silhouette"
+    },
+    "wide": {
+      "width": 1536,
+      "height": 864,
+      "seed": 4101503,
+      "prompt": "Wide empty premium editorial backdrop. Midnight navy on left half, exceptionally dark quiet negative space for white title. Subtle soft steel-blue luminous atmosphere on far right, restrained cool blue gradient. No discrete objects or shapes, no platform, no surface, no floor, no horizon, no room, no product, no brand emblem, no letters. Sophisticated flat front-plane photographic graphic, controlled vignette, asymmetric light with clean dark left.",
+      "negative": "product, object, disc, turntable, computer, device, logo, symbol, text, typography, letters, number, watermark, floor, tabletop, pedestal, horizon, furniture, frame, border, prop, busy pattern, hard shadow, visible room, product silhouette"
+    }
+  },
+  "max_new_generation_tasks": 3,
+  "asset_human_review_status": "pending"
+}

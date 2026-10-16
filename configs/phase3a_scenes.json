@@ -1,0 +1,16 @@
+{
+  "output_size_px": [1024, 1024],
+  "negative_prompt": "products, merchandise, turntable, disc, handbag, headphones, furniture, table, podium, pedestal, props, people, text, letters, logo, watermark, numbers, busy clutter, illustration, pixel art",
+  "templates": {
+    "white_hero": {"provider": "python_solid_white", "rgb": [255, 255, 255]},
+    "studio": {"provider": "comfyui", "prompt": "Photorealistic EMPTY commercial photography backdrop only. A seamless neutral charcoal gray vertical studio background with a soft broad luminous gradient in the center, delicate tonal depth, diffused large softbox illumination, clean refined catalog photography. The entire central area is empty negative space for later compositing a product. Straight-on view, no horizon line, no floor, no table, no platform, no pedestal, no props, no products, no objects, no text or logos."},
+    "lifestyle": {"provider": "comfyui", "scenes": {
+      "industrial_gallery": "Photorealistic EMPTY minimalist industrial design gallery BACKDROP only. A matte slate gray architectural wall, subtle vertical brushed-metal panels near the far edges, gentle cool blue-gray side illumination, refined soft gradients and shallow background depth. Large unobstructed empty central space. Straight-on vertical backdrop for a suspended product presentation. No floor, no contact surface, no tabletop, no podium, no products, no objects, no text, no logos.",
+      "warm_fashion_gallery": "Photorealistic EMPTY luxury fashion photography BACKDROP only. A warm ivory and sand beige plaster wall with subtle architectural panel lines near the far edges and delicate soft afternoon light, quiet elegant premium commercial photography, large clean unoccupied central space. Straight-on vertical backdrop for a suspended product presentation. No floor, no table, no furniture, no pedestal, no bag, no merchandise, no objects, no people, no text or logos."
+    }}
+  },
+  "instances": [
+    {"instance_id": "blue_left", "segmentation_result": "data/intermediate/phase2a_fix_confirmed_openings_20261014T144510578271Z/blue_left/segmentation_result.json", "mode": "strict", "scene": "industrial_gallery", "scale": 1.0, "center_normalized": [0.5, 0.5]},
+    {"instance_id": "bag", "segmentation_result": "data/intermediate/phase2a/bag/segmentation_result.json", "mode": "preview", "scene": "warm_fashion_gallery", "scale": 0.85, "center_normalized": [0.5, 0.5]}
+  ]
+}

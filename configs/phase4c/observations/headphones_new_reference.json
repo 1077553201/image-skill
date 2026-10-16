@@ -1,0 +1,132 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "view_image",
+  "binding": {
+    "source_id": "source_9f44b96894580f90",
+    "source_sha256": "9f44b96894580f90b7895e8519ed8a77c86f5568f8fee4f0d074332680928084",
+    "instance_id": "headphones",
+    "mask_version": "8fa5d92848962a0f1524736fb33c4d272268865b1508c2f12b8921f4a08ea4a6"
+  },
+  "display_name": "Over-ear headphones",
+  "visible_view": "three_quarter_front",
+  "facts": {
+    "color": {
+      "value": "Black",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "earcups": {
+      "value": "Padded earcups",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "headband": {
+      "value": "Arched headband",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "profile": {
+      "value": "Over-ear form",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    }
+  },
+  "fact_kinds": {
+    "color": "appearance",
+    "earcups": "structure",
+    "headband": "structure",
+    "profile": "appearance"
+  },
+  "features": [
+    {
+      "title": "Padded earcups",
+      "description": "Visible cushion detail",
+      "fact_ids": [
+        "earcups"
+      ]
+    },
+    {
+      "title": "Arched headband",
+      "description": "A continuous profile",
+      "fact_ids": [
+        "headband"
+      ]
+    },
+    {
+      "title": "Black finish",
+      "description": "Understated color",
+      "fact_ids": [
+        "color"
+      ]
+    }
+  ],
+  "detail_regions": [
+    {
+      "bbox": [
+        270,
+        690,
+        610,
+        590
+      ],
+      "label": "Earcup cushion",
+      "fact_ids": [
+        "earcups"
+      ]
+    }
+  ],
+  "recommended_intents": [
+    "studio_photo"
+  ],
+  "style": {
+    "name": "Light photographic restraint from a new local watch reference",
+    "dark_background": false,
+    "palette": {
+      "paper": "#f5f5f4",
+      "white": "#ffffff",
+      "ink": "#20262a",
+      "muted": "#52585c",
+      "navy": "#252b2e",
+      "blue": "#6b7479",
+      "cyan": "#e0e4e6",
+      "line": "#9ca4aa"
+    },
+    "background_briefs": {
+      "studio": {
+        "prompt": "Completely empty nearly white seamless vertical photographic backdrop, diffuse broad daylight, slight neutral silver grey falloff near right edge, no objects, no floor, no horizon, no typography.",
+        "negative": "object, product, text, logo, floor, people"
+      }
+    }
+  },
+  "risks": [
+    "No evidence for active noise cancellation, wireless, battery, sound quality, codecs or compatibility",
+    "Preview foreground only; no wearing or head contact synthesis",
+    "Source angle is retained without rotation"
+  ],
+  "consumer_copy": {
+    "studio_photo": {
+      "headline": "BLACK, IN\nTHE LIGHT.",
+      "body": "Over-ear form. Padded earcups.",
+      "fact_ids": [
+        "color",
+        "profile",
+        "earcups"
+      ]
+    }
+  },
+  "internal_notes": {
+    "reference_derivation": "Transfer headroom, neutral bright space and simple hierarchy. Do not transfer watch facts, color, contact or typography (none observed)."
+  }
+}

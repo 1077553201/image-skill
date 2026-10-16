@@ -1,0 +1,49 @@
+{
+  "product_id": "gamepad_budget_red",
+  "product_asset": "data/intermediate/gamepad_front_v1/segmentation_result.json",
+  "agent_analysis": "configs/examples/observations/gamepad_red.json",
+  "reference_catalog": "data/references/bedsure_duvet_style/catalog.json",
+  "reference_analysis": "data/references/bedsure_duvet_style/reference_style.json",
+  "product_category": "game controller",
+  "product_facts": {
+    "price_positioning": {
+      "value": "Affordable / budget-friendly",
+      "status": "human_verified",
+      "method": "explicit_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "gamepad_budget_red",
+        "statement": "这是一个游戏手柄，价格便宜"
+      }
+    },
+    "category": {
+      "value": "Game controller",
+      "status": "human_verified",
+      "method": "explicit_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "gamepad_budget_red",
+        "statement": "这是一个游戏手柄"
+      }
+    }
+  },
+  "language": "zh",
+  "platform": "generic",
+  "output_count": 7,
+  "shot_types": [
+    "white_hero",
+    "studio_photo",
+    "feature_infographic",
+    "structure_explainer",
+    "material_detail",
+    "lifestyle_scene",
+    "wide_banner"
+  ],
+  "creation_modes": ["evidence_preserving"],
+  "review_policy": {"mode": "preview"},
+  "generation_budget": {"max_new_backgrounds": 2},
+  "scene": {"level": 2, "presentation": "editorial_panel"},
+  "output_dir": "data/outputs/campaigns/gamepad_budget_red_v1"
+}

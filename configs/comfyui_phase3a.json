@@ -1,0 +1,45 @@
+{
+  "base_url": "http://192.168.1.171:8188",
+  "workflow_path": "configs/workflows/qwen_image21_api_original.json",
+  "workflow_source": {
+    "kind": "actual_successful_ComfyUI_history_API_prompt",
+    "prompt_id": "b6a9195f-d37e-41cd-8a7e-90edb6460379",
+    "original_sha256": "580a958bfb5f679d0b2cb79fda32b965a28f31a667e992e43fb5a258720c699b"
+  },
+  "mapping": {
+    "positive": {
+      "node": "452",
+      "input": "prompt",
+      "class_type": "TextEncodeQwenImage21"
+    },
+    "negative": {
+      "node": "452",
+      "input": "negative_prompt",
+      "class_type": "TextEncodeQwenImage21"
+    },
+    "width": {
+      "node": "456",
+      "input": "width",
+      "class_type": "EmptyLatentImage"
+    },
+    "height": {
+      "node": "456",
+      "input": "height",
+      "class_type": "EmptyLatentImage"
+    },
+    "seed": {
+      "node": "458",
+      "input": "seed",
+      "class_type": "KSampler"
+    },
+    "prefix": {
+      "node": "461",
+      "input": "filename_prefix",
+      "class_type": "SaveImageAdvanced"
+    }
+  },
+  "output_node": "461",
+  "timeout_seconds": 1800,
+  "request_timeout_seconds": 20,
+  "poll_seconds": 2
+}

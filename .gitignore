@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-seg/
+models/**/*.onnx
+venv/
+build/
+dist/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+configs/*.local.json
+reports/*
+!reports/.gitkeep
+data/**/*
+!data/**/
+!data/**/.gitkeep
+
+# Per-project machine connection, recreated by the Skill when needed.
+detail-page.connection.json
+
+# Keep the current Skill's verification evidence, without temporary test workspaces.
+!reports/detail_page_validation/
+reports/detail_page_validation/*
+!reports/detail_page_validation/validation.json
+!reports/detail_page_validation/tests.txt
+!reports/detail_page_validation/typography-base.png
+!reports/detail_page_validation/typography-preview.png
+!reports/detail_page_validation/typography-preview.json
+

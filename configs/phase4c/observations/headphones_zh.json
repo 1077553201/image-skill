@@ -1,0 +1,132 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "view_image",
+  "binding": {
+    "source_id": "source_9f44b96894580f90",
+    "source_sha256": "9f44b96894580f90b7895e8519ed8a77c86f5568f8fee4f0d074332680928084",
+    "instance_id": "headphones",
+    "mask_version": "8fa5d92848962a0f1524736fb33c4d272268865b1508c2f12b8921f4a08ea4a6"
+  },
+  "display_name": "Over-ear headphones",
+  "visible_view": "three_quarter_front",
+  "facts": {
+    "color": {
+      "value": "Black",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "earcups": {
+      "value": "Padded earcups",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "headband": {
+      "value": "Arched headband",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    },
+    "profile": {
+      "value": "Over-ear form",
+      "status": "observed",
+      "sources": [
+        "source_9f44b96894580f90"
+      ],
+      "method": "agent_actual_photo_read"
+    }
+  },
+  "fact_kinds": {
+    "color": "appearance",
+    "earcups": "structure",
+    "headband": "structure",
+    "profile": "appearance"
+  },
+  "features": [
+    {
+      "title": "Padded earcups",
+      "description": "Visible cushion detail",
+      "fact_ids": [
+        "earcups"
+      ]
+    },
+    {
+      "title": "Arched headband",
+      "description": "A continuous profile",
+      "fact_ids": [
+        "headband"
+      ]
+    },
+    {
+      "title": "Black finish",
+      "description": "Understated color",
+      "fact_ids": [
+        "color"
+      ]
+    }
+  ],
+  "detail_regions": [
+    {
+      "bbox": [
+        270,
+        690,
+        610,
+        590
+      ],
+      "label": "Earcup cushion",
+      "fact_ids": [
+        "earcups"
+      ]
+    }
+  ],
+  "recommended_intents": [
+    "editorial_campaign"
+  ],
+  "style": {
+    "name": "Form in black — graphic audio culture",
+    "palette": {
+      "paper": "#16121e",
+      "white": "#ffffff",
+      "ink": "#ffffff",
+      "muted": "#d7cfdf",
+      "navy": "#16121e",
+      "blue": "#724b9c",
+      "cyan": "#eee85a",
+      "line": "#d6ce45"
+    },
+    "dark_background": true,
+    "background_briefs": {
+      "studio": {
+        "prompt": "Completely empty near-black aubergine vertical photography backdrop, almost black seamless color field with extremely subtle diffuse violet illumination at far lower left. Uniform dark quiet upper and right space, no horizon, no floor, no table, no objects, no typography.",
+        "negative": "object, product, headphones, bag, disc, text, logo, table, floor, person, merchandise"
+      }
+    }
+  },
+  "risks": [
+    "No evidence for active noise cancellation, wireless, battery, sound quality, codecs or compatibility",
+    "Preview foreground only; no wearing or head contact synthesis",
+    "Source angle is retained without rotation"
+  ],
+  "consumer_copy": {
+    "editorial_campaign": {
+      "headline": "黑色，\n自有轮廓。",
+      "body": "包耳式造型。\n弧形头梁，黑色饰面。",
+      "fact_ids": [
+        "color",
+        "profile",
+        "headband"
+      ]
+    }
+  },
+  "internal_notes": {
+    "project_context": "项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 项目开发 Pipeline Skill Agent Mask Evidence 源像素保留 原图真实性审核 自动化测试 "
+  }
+}

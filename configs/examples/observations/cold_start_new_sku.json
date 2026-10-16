@@ -1,0 +1,12 @@
+{
+  "schema_version":"product_understanding.4b.1",
+  "provider":"image_capable_agent",
+  "image_read_tool":"view_image",
+  "binding":{"source_id":"source_35eb4307c4b9b6be","source_sha256":"35eb4307c4b9b6bec90352ff40bd32ba3c4ae6cd901401b5c07e55b6e8930d97","instance_id":"silver_six","mask_version":"d5a71f20cdc97d238f57e156fe5b13a060bfa68a18596d920335dddaac2c4575"},
+  "display_name":"Silver-tone decorative object",
+  "visible_view":"oblique_front",
+  "facts":{"visible_color":{"value":"Silver-tone appearance","status":"observed","sources":["source_35eb4307c4b9b6be"],"method":"agent_actual_preview_read"}},
+  "fact_kinds":{"visible_color":"appearance"},
+  "recommended_intents":["white_hero"],
+  "risks":["New creative asset with no prior creative preset, only an existing segmentation result","Do not transfer blue product dimensions, weight, material or through-hole confirmation","Mask remains preview; opening edges, highlights and center structure are not human-approved"]
+}

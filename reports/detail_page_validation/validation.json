@@ -1,0 +1,14 @@
+{
+  "tests_run": 21,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "model_outputs_in_tests": "synthetic fixtures only; no real model calls",
+  "real_model_generation": "not_executed_no_product_batch_confirmed",
+  "remote_connection": {
+    "base_url": "http://192.168.1.171:8188",
+    "node_count": 1027,
+    "verified_at": "2026-10-16T06:11:31.111409+00:00"
+  }
+}

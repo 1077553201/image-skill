@@ -1,0 +1,41 @@
+{
+  "schema_version":"product_understanding.4b.1",
+  "provider":"image_capable_agent",
+  "image_read_tool":"view_image",
+  "binding":{"source_id":"source_85214cda5c76a02f","source_sha256":"85214cda5c76a02ff58558cb9254c803730027bff66e6dfbc955b47f619c5ac4","instance_id":"blue_left","mask_version":"50925f5bfb9d14acbf7c867de328f475f2f437b82adf6943a6e15ba08b67f495"},
+  "display_name":"Blue decorative disc",
+  "visible_view":"front",
+  "facts":{
+    "color":{"value":"Blue","status":"observed","sources":["source_85214cda5c76a02f"],"method":"actual_source_photo_and_prior_hash_bound_analysis"},
+    "large_openings":{"value":3,"status":"observed","sources":["source_85214cda5c76a02f"],"method":"actual_visible_photo_not_a_default_hole_count"}
+  },
+  "fact_kinds":{"color":"appearance","large_openings":"structure","lower_hole":"structure","diameter_cm":"quantity","weight_g":"quantity","material":"material"},
+  "features":[
+    {"title":"3 large openings","description":"Visible openwork profile","fact_ids":["large_openings"]},
+    {"title":"Lower through-hole","description":"Confirmed physical structure","fact_ids":["lower_hole"]}
+  ],
+  "detail_regions":[
+    {"bbox":[254,554,125,159],"label":"Center detail","fact_ids":["lower_hole"]},
+    {"bbox":[367,529,174,133],"label":"Opening edge","fact_ids":["large_openings"]}
+  ],
+  "recommended_intents":["white_hero","studio_photo","structure_explainer","material_detail","specifications","lifestyle_scene","wide_banner"],
+  "copy":{
+    "studio_photo":{"headline":"Blue, with definition.","body":"A decorative composite disc.","fact_ids":["color","material"]},
+    "structure_explainer":{"headline":"The openwork profile.","body":"A front view of the visible structure.","fact_ids":["large_openings","lower_hole"]},
+    "material_detail":{"headline":"True details.\nOriginal view.","body":"Limited to the pixels in the source photograph.","fact_ids":[]},
+    "specifications":{"headline":"Facts, clearly stated.","body":"Composite material. Owner-supplied specifications.","fact_ids":["material","diameter_cm","weight_g"]},
+    "lifestyle_scene":{"headline":"A gallery perspective.","body":"A blue accent in an editorial frame.","fact_ids":["color"]},
+    "wide_banner":{"headline":"An open\nexpression.","body":"Blue. Composite. Distinctive form.","fact_ids":["color","material","large_openings"]}
+  },
+  "style":{
+    "name":"Cool architectural product editorial",
+    "dark_background":true,
+    "excluded_copy_tokens":["Apple","Mac","M6","Thunderbolt"],
+    "palette":{"paper":"#f3f6fa","white":"#ffffff","ink":"#142839","muted":"#4b6273","navy":"#0c2038","blue":"#0676ab","cyan":"#97dff0","line":"#a8c0d4"},
+    "background_briefs":{
+      "studio":{"prompt":"Empty premium technical product editorial background ONLY. Midnight blue and deep slate field, restrained silver-cyan diffuse glow at outer right, dark smooth left and top for white typography. Clean sophisticated softbox photographic atmosphere. No horizon, no floor, no object, no disc, no turntable, no computer, no emblem, no platform, no text or logo.","negative":"product, disc, turntable, computer, device, text, brand, logo, emblem, object, pedestal, floor, horizon, clutter"},
+      "environment":{"prompt":"Empty contemporary design gallery interior for an editorial advertising composition. Cool pale stone wall across left two thirds, architectural curved opening at far right revealing a softly lit blue-grey wall, refined indirect daylight and a small decorative plant on far right. Real material texture, generous negative space, subtle credible architectural depth. No displayed merchandise, no disc, no turntable, no computer, no equipment, no product, no people, no text, no logos. No table or pedestal in central foreground. A flat advertisement panel will be placed over the scene; no product contact relationship should be implied.","negative":"disc, turntable, merchandise, product, equipment, computer, text, logo, people, central table, pedestal, clutter"}
+    }
+  },
+  "risks":["Unknown thickness, reverse geometry, compatibility and package contents","Same front photograph, not new angles","Small original detail regions limit real resolution"]
+}

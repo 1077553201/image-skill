@@ -1,0 +1,165 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "mimo_desktop_attachment_vision_plus_pil_pixel_analysis",
+  "binding": {
+    "source_id": "source_85214cda5c76a02f",
+    "source_sha256": "85214cda5c76a02ff58558cb9254c803730027bff66e6dfbc955b47f619c5ac4",
+    "instance_id": "blue_left",
+    "mask_version": "50925f5bfb9d14acbf7c867de328f475f2f437b82adf6943a6e15ba08b67f495"
+  },
+  "display_name": "Blue composite openwork disc",
+  "visible_view": "front",
+  "facts": {
+    "color": {
+      "value": "Blue",
+      "status": "observed",
+      "sources": ["source_85214cda5c76a02f"],
+      "method": "direct_source_photo_inspection_and_pixel_sample"
+    },
+    "large_openings": {
+      "value": 3,
+      "status": "observed",
+      "sources": ["source_85214cda5c76a02f"],
+      "method": "connected_component_count_of_interior_background_showing_cutouts"
+    },
+    "center_metal_hub": {
+      "value": "Circular metal hub with radial face detail",
+      "status": "observed",
+      "sources": ["source_85214cda5c76a02f"],
+      "method": "direct_source_photo_inspection"
+    },
+    "fasteners": {
+      "value": 3,
+      "status": "observed",
+      "sources": ["source_85214cda5c76a02f"],
+      "method": "visible_screw_heads_around_center_hub"
+    },
+    "small_lower_aperture": {
+      "value": "Small circular aperture below center hub",
+      "status": "observed",
+      "sources": ["source_85214cda5c76a02f"],
+      "method": "compact_light_disc_matching_interior_opening_color_in_source_photo"
+    }
+  },
+  "fact_kinds": {
+    "color": "appearance",
+    "large_openings": "structure",
+    "center_metal_hub": "structure",
+    "fasteners": "structure",
+    "small_lower_aperture": "structure",
+    "diameter_cm": "quantity",
+    "weight_g": "quantity",
+    "material": "material"
+  },
+  "features": [
+    {
+      "title": "三处大开孔",
+      "description": "正面可见两处翼形大开孔与一处下方 U 形开孔，透出背景。",
+      "fact_ids": ["large_openings"]
+    },
+    {
+      "title": "中心金属轮毂",
+      "description": "圆盘中心为带放射纹理的金属件，周围可见紧固件。",
+      "fact_ids": ["center_metal_hub", "fasteners"]
+    },
+    {
+      "title": "复合材料盘体",
+      "description": "用户确认材质为复合材料，直径 30cm，重量 500g。",
+      "fact_ids": ["material", "diameter_cm", "weight_g"]
+    }
+  ],
+  "detail_regions": [
+    {
+      "bbox": [250, 545, 130, 130],
+      "label": "中心金属轮毂与紧固件",
+      "fact_ids": ["center_metal_hub", "fasteners"]
+    },
+    {
+      "bbox": [295, 655, 50, 55],
+      "label": "中心下方小圆孔",
+      "fact_ids": ["small_lower_aperture"]
+    },
+    {
+      "bbox": [76, 441, 187, 179],
+      "label": "左侧翼形大开孔边缘",
+      "fact_ids": ["large_openings"]
+    }
+  ],
+  "recommended_intents": [
+    "white_hero",
+    "studio_photo",
+    "structure_explainer",
+    "material_detail",
+    "specifications",
+    "lifestyle_scene",
+    "wide_banner"
+  ],
+  "copy": {
+    "white_hero": {
+      "headline": "蓝调开孔圆盘",
+      "body": "复合材料 · 直径 30cm · 500g",
+      "fact_ids": ["color", "material", "diameter_cm", "weight_g"]
+    },
+    "studio_photo": {
+      "headline": "轮廓清晰的蓝",
+      "body": "复合材料圆盘，正面结构一览无余。",
+      "fact_ids": ["color", "material"]
+    },
+    "structure_explainer": {
+      "headline": "三处大开孔",
+      "body": "两处翼形开孔与一处下方开孔，中心金属轮毂固定。",
+      "fact_ids": ["large_openings", "center_metal_hub", "fasteners"]
+    },
+    "material_detail": {
+      "headline": "原图细节",
+      "body": "仅呈现源照片中真实可见的像素区域。",
+      "fact_ids": ["center_metal_hub"]
+    },
+    "specifications": {
+      "headline": "参数一目了然",
+      "body": "直径 30cm · 重量 500g · 复合材料",
+      "fact_ids": ["diameter_cm", "weight_g", "material"]
+    },
+    "lifestyle_scene": {
+      "headline": "展陈视角",
+      "body": "以编辑式版面呈现这枚蓝色圆盘。",
+      "fact_ids": ["color"]
+    },
+    "wide_banner": {
+      "headline": "开放的形",
+      "body": "蓝色 · 复合材料 · 30cm",
+      "fact_ids": ["color", "material", "diameter_cm", "large_openings"]
+    }
+  },
+  "style": {
+    "name": "Cool architectural product editorial",
+    "dark_background": true,
+    "excluded_copy_tokens": ["Apple", "Mac", "Thunderbolt", "Tesla"],
+    "palette": {
+      "paper": "#f3f6fa",
+      "white": "#ffffff",
+      "ink": "#142839",
+      "muted": "#4b6273",
+      "navy": "#0c2038",
+      "blue": "#0676ab",
+      "cyan": "#97dff0",
+      "line": "#a8c0d4"
+    },
+    "background_briefs": {
+      "studio": {
+        "prompt": "Empty premium technical product editorial background ONLY. Midnight blue and deep slate field, restrained silver-cyan diffuse glow at outer right, dark smooth left and top for white typography. Clean sophisticated softbox photographic atmosphere. No horizon, no floor, no object, no disc, no turntable, no computer, no emblem, no platform, no text or logo.",
+        "negative": "product, disc, turntable, computer, device, text, brand, logo, emblem, object, pedestal, floor, horizon, clutter"
+      },
+      "environment": {
+        "prompt": "Empty contemporary design gallery interior for an editorial advertising composition. Cool pale stone wall across left two thirds, architectural curved opening at far right revealing a softly lit blue-grey wall, refined indirect daylight and a small decorative plant on far right. Real material texture, generous negative space, subtle credible architectural depth. No displayed merchandise, no disc, no turntable, no computer, no equipment, no product, no people, no text, no logos. No table or pedestal in central foreground. A flat advertisement panel will be placed over the scene; no product contact relationship should be implied.",
+        "negative": "disc, turntable, merchandise, product, equipment, computer, text, logo, people, central table, pedestal, clutter"
+      }
+    }
+  },
+  "risks": [
+    "仅有正面视图，厚度与背面结构未知",
+    "小圆孔在照片中呈背景同色，是否贯穿孔需用户确认",
+    "材料成分细节不可仅凭外观推断"
+  ]
+}

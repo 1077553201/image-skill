@@ -1,0 +1,59 @@
+{
+  "product_id": "blue_disc_30cm",
+  "product_asset": "data/intermediate/phase2a_fix_confirmed_openings_20261014T144510578271Z/blue_left/segmentation_result.json",
+  "agent_analysis": "configs/examples/observations/blue_disc_zh.json",
+  "product_facts": {
+    "diameter_cm": {
+      "value": 30,
+      "status": "human_verified",
+      "method": "explicit_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_disc_30cm",
+        "statement": "材质为复合材料，直径30cm，重量500g"
+      }
+    },
+    "weight_g": {
+      "value": 500,
+      "status": "human_verified",
+      "method": "explicit_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_disc_30cm",
+        "statement": "材质为复合材料，直径30cm，重量500g"
+      }
+    },
+    "material": {
+      "value": "Composite material",
+      "status": "human_verified",
+      "method": "explicit_user_statement",
+      "reviewer": "项目用户（本次对话）",
+      "provenance": {
+        "kind": "user_statement",
+        "product_id": "blue_disc_30cm",
+        "statement": "材质为复合材料，直径30cm，重量500g"
+      }
+    }
+  },
+  "product_category": "decorative industrial disc",
+  "language": "zh",
+  "platform": "generic",
+  "output_count": 7,
+  "shot_types": [
+    "white_hero",
+    "studio_photo",
+    "structure_explainer",
+    "material_detail",
+    "specifications",
+    "lifestyle_scene",
+    "wide_banner"
+  ],
+  "creation_modes": ["evidence_preserving"],
+  "review_policy": {"mode": "strict"},
+  "generation_budget": {"max_new_backgrounds": 2},
+  "scene": {"level": 2, "presentation": "editorial_panel"},
+  "reuse_backgrounds_from": "data/outputs/phase4b/blue_left",
+  "output_dir": "data/outputs/campaigns/blue_disc_30cm_zh_v1"
+}

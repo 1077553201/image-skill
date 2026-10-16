@@ -1,0 +1,44 @@
+{
+  "schema_version": "product_understanding.4b.1",
+  "provider": "image_capable_agent",
+  "image_read_tool": "view_image",
+  "binding": {"source_id":"source_00e3bc44d0bfd91b","source_sha256":"00e3bc44d0bfd91befa316f9156b5209f1f990dbe7b7335fa631bb9c3a02f31a","instance_id":"bag","mask_version":"ecbf10b9e7061742102d5bb047579346bba7d6eb43049d0b52d3b762e156ea1b"},
+  "display_name": "Top-handle handbag",
+  "visible_view": "near_front",
+  "facts": {
+    "color": {"value":"Brown","status":"observed","sources":["source_00e3bc44d0bfd91b"],"method":"agent_actual_photo_read"},
+    "handle": {"value":"Top handle","status":"observed","sources":["source_00e3bc44d0bfd91b"],"method":"agent_actual_photo_read"},
+    "finish": {"value":"Visible textured surface","status":"observed","sources":["source_00e3bc44d0bfd91b"],"method":"agent_actual_photo_read"},
+    "clasp": {"value":"Gold-tone front clasp","status":"observed","sources":["source_00e3bc44d0bfd91b"],"method":"agent_actual_photo_read"}
+  },
+  "fact_kinds": {"color":"appearance","handle":"structure","finish":"appearance","clasp":"structure"},
+  "features": [
+    {"title":"Top handle","description":"A defined silhouette","fact_ids":["handle"]},
+    {"title":"Textured finish","description":"Visible surface detail","fact_ids":["finish"]},
+    {"title":"Gold-tone clasp","description":"A warm focal point","fact_ids":["clasp"]}
+  ],
+  "detail_regions": [
+    {"bbox":[430,600,190,185],"label":"Front clasp","fact_ids":["clasp"]},
+    {"bbox":[260,450,240,170],"label":"Surface texture","fact_ids":["finish"]}
+  ],
+  "recommended_intents": ["white_hero","brand_signature","feature_infographic","material_detail","lifestyle_scene","wide_banner"],
+  "copy": {
+    "brand_signature":{"headline":"Warm character.\nClear presence.","body":"A brown top-handle silhouette.","fact_ids":["color","handle"]},
+    "feature_infographic":{"headline":"Details that define it.","body":"A closer look at the visible design.","fact_ids":["handle","finish","clasp"]},
+    "material_detail":{"headline":"Texture, up close.","body":"Details from the original photograph.","fact_ids":["finish","clasp"]},
+    "lifestyle_scene":{"headline":"An editorial perspective.","body":"Brown tones. A defined silhouette.","fact_ids":["color","handle"]},
+    "wide_banner":{"headline":"A considered\naccent.","body":"Brown finish. Gold-tone detail.","fact_ids":["color","clasp"]}
+  },
+  "style": {
+    "name":"Warm fashion editorial",
+    "dark_background":false,
+    "font_regular":"C:/Windows/Fonts/georgia.ttf",
+    "font_bold":"C:/Windows/Fonts/georgiab.ttf",
+    "palette":{"paper":"#faf5ee","white":"#ffffff","ink":"#32221f","muted":"#6a5249","navy":"#3c2824","blue":"#895840","cyan":"#e5c6a4","line":"#bfa88e"},
+    "background_briefs": {
+      "studio":{"prompt":"Empty warm fashion editorial background ONLY. Immaculate pale ivory and champagne photographic color field, quiet pale left half for dark editorial lettering. Soft restrained caramel glow at outer right edge, rich but understated warm neutrals. Frontal softbox light, smooth uninterrupted field, no floor, no pedestal, no horizon, no panel, no objects, no text, no handbag, no product, no logo.","negative":"bag, handbag, product, merchandise, letters, logo, text, people, table, floor, horizon, platform, clutter"},
+      "environment":{"prompt":"Empty sophisticated fashion gallery INTERIOR used as an editorial advertising background. Warm limestone walls, elegant tall architectural arch at far right, soft warm window light, one small olive plant and sculptural lounge chair restricted to far right third. Left two thirds contain a calm softly lit ivory wall, uncluttered. A rich credible interior with depth and material textures. No merchandise, no bags, no display products, no people, no labels, no logos, no readable signs. Camera approximately eye level. No table or pedestal in central foreground. The scene will be partly covered by a flat graphic advertisement panel, not used to fake an installed product.","negative":"handbag, bag, product, merchandise, shopping display, mannequin, people, text, signage, logo, clutter, central table, central pedestal"}
+    }
+  },
+  "risks":["Material composition, dimensions, weight and capacity unknown","Mask pending review; no strict output","No actual carrying, contact, strap loading or interior-compartment claim"]
+}

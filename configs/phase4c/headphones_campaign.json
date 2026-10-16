@@ -1,0 +1,56 @@
+{
+  "product_id": "headphones",
+  "product_asset": "data/intermediate/phase2a/headphones/segmentation_result.json",
+  "agent_analysis": "configs/phase4c/observations/headphones.json",
+  "output_count": 3,
+  "shot_types": [
+    "editorial_campaign",
+    "material_detail",
+    "wide_banner"
+  ],
+  "output_sizes": {
+    "default": [
+      1024,
+      1024
+    ],
+    "wide_banner": [
+      1536,
+      864
+    ]
+  },
+  "generation_budget": {
+    "max_new_backgrounds": 1
+  },
+  "review_policy": {
+    "mode": "auto"
+  },
+  "scene": {
+    "level": 1
+  },
+  "creative_direction": {
+    "enabled": true,
+    "product_use": "Visual product presentation",
+    "target_buyer": "Design-conscious headphone buyers",
+    "campaign_goal": "Graphic recognition, cushion detail, and a low-density web masthead",
+    "reference_language": "Original direction; no external reference claimed",
+    "mood": "Form in black — graphic audio culture",
+    "photography_scene": "Non-contact vertical backdrop, no white product panel",
+    "information_density": "Different by shot: headline / source detail or structure / sourced information",
+    "sequence_rationale": "Graphic recognition, cushion detail, and a low-density web masthead",
+    "intent_layouts": {
+      "editorial_campaign": {
+        "family": "typographic_poster",
+        "reason": "Establish identity with a distinct spatial hierarchy"
+      },
+      "material_detail": {
+        "family": "macro_story",
+        "reason": "Change scale and reading rhythm for visible detail or structure"
+      },
+      "wide_banner": {
+        "family": "wide_atmosphere",
+        "reason": "Finish with a different placement and information density"
+      }
+    }
+  },
+  "output_dir": "data/outputs/phase4c/headphones_campaign"
+}

@@ -1,0 +1,55 @@
+{
+  "status": "rendered_pending_visual_review",
+  "text_rewritten": false,
+  "glyph_coverage_checked": true,
+  "blocks": [
+    {
+      "text": "中文排版验证",
+      "font": "C:/Windows/Fonts/msyhbd.ttc",
+      "box": [
+        55,
+        55,
+        690,
+        90
+      ],
+      "fits": true
+    },
+    {
+      "text": "真实字体 · 准确文案 · 独立文字层",
+      "font": "C:/Windows/Fonts/msyh.ttc",
+      "box": [
+        55,
+        175,
+        690,
+        60
+      ],
+      "fits": true
+    },
+    {
+      "text": "此图仅用于验证排版，不是商品生成结果。",
+      "font": "C:/Windows/Fonts/msyh.ttc",
+      "box": [
+        55,
+        255,
+        690,
+        55
+      ],
+      "fits": true
+    },
+    {
+      "text": "灰色区域模拟商品保护区\n文字不会覆盖该区域",
+      "font": "C:/Windows/Fonts/msyh.ttc",
+      "box": [
+        55,
+        850,
+        690,
+        105
+      ],
+      "fits": true
+    }
+  ],
+  "canvas": [
+    800,
+    1000
+  ]
+}

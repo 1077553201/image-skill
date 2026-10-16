@@ -1,0 +1,41 @@
+{
+  "capability": "image_guided_creative_edit",
+  "base_url": null,
+  "workflow_path": "qwen_image21_edit_api.json",
+  "workflow_sha256": "7442e899c8d3576173632dc098bb6f173fa7fab5a1493a5db9987ef1b1e7ea46",
+  "output_node": "461",
+  "request_timeout_seconds": 40,
+  "timeout_seconds": 1800,
+  "poll_seconds": 3,
+  "mapping": {
+    "prompt": {
+      "node": "452",
+      "class_type": "TextEncodeQwenImage21",
+      "input": "prompt"
+    },
+    "negative_prompt": {
+      "node": "452",
+      "class_type": "TextEncodeQwenImage21",
+      "input": "negative_prompt"
+    },
+    "reference_image": {
+      "node": "470",
+      "class_type": "LoadImage",
+      "input": "image"
+    },
+    "seed": {
+      "node": "458",
+      "class_type": "KSampler",
+      "input": "seed"
+    },
+    "prefix": {
+      "node": "461",
+      "class_type": "SaveImageAdvanced",
+      "input": "filename_prefix"
+    }
+  },
+  "verified_skeleton_source": {
+    "actual_trial_prompt_id": "2ba74bd5-7952-4367-9a45-8d685f86c561",
+    "identity_verified": false
+  }
+}

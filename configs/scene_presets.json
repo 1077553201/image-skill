@@ -1,0 +1,35 @@
+{
+  "schema_version": "scene_presets.3b.1",
+  "presets": {
+    "abstract_premium": {
+      "goal": "front-facing premium graphic atmosphere for a real product overlay",
+      "positive_prompt": "Premium editorial advertising BACKGROUND ONLY. A flat front-facing abstract brand graphic, not a room or interior photograph. Refined deep midnight navy fading into muted slate blue at the center. Extremely soft cyan-silver luminous vertical ribbons and broad out-of-focus curved light gradients confined to the far left and far right outer edges. A restrained contemporary technology aesthetic, elegant and quiet, sophisticated large softbox illumination from upper left. The middle 70 percent is smooth calm negative space, visually unobstructed. The same continuous dark navy surface extends to ALL FOUR image edges including the bottom edge. Wall-only abstract graphic, no spatial depth or ground plane, no perspective vanishing point. No text, no logo, no products, no equipment, no platforms, no floor, no horizontal line, no horizontal base or bottom stripe.",
+      "negative_prompt": "product, merchandise, disc, turntable, bag, headphones, people, letters, text, logo, watermark, duplicated subject, room, interior, doorway, window, table, furniture, pedestal, podium, floor, ground, horizon, wall-floor junction, sweep, paper roll, folded backdrop, bottom ledge, horizontal stripe, geometric objects in the central area, clutter, damaged texture, grunge, harsh spotlight",
+      "color_tendency": "navy/slate with restrained cyan-silver peripheral light",
+      "lighting_direction": "upper_left_soft",
+      "composition": "front-facing flat graphic; calm center; details only at outer edges",
+      "placement_region_normalized": [0.15, 0.13, 0.7, 0.74],
+      "center_normalized": [0.5, 0.5],
+      "compatible_views": ["front"],
+      "allow_floor": false,
+      "allow_visible_horizon": false,
+      "allow_props": false,
+      "risk_rules": {"horizontal_line_risk_threshold": 0.4, "central_edge_density_threshold": 0.08}
+    },
+    "editorial_minimal": {
+      "goal": "warm refined front-facing fashion editorial background without a contact plane",
+      "positive_prompt": "Premium minimalist fashion advertising BACKGROUND ONLY. A flat front-facing editorial brand graphic with an immaculate satin warm taupe and champagne gradient. Very subtle broad abstract burgundy and caramel curved color washes confined to the far peripheral left and right margins, soft and out of focus, no solid freestanding objects. Sophisticated gentle illumination from a large upper-left softbox, balanced warm neutral palette, clean modern luxury visual identity, elegant rather than ornate. The central 70 percent is empty quiet smooth negative space for later overlay. The SAME uninterrupted softly shaded color field continues to every image border, including the entire bottom border. This is a flat abstract photographic studio graphic, NOT a room, NOT a floor, NOT a paper sweep. No horizon line, no backdrop bend, no bottom stripe, no frame, no product, no text, no logo.",
+      "negative_prompt": "product, handbag, bag, merchandise, people, text, letters, logo, watermark, duplicate subject, room, interior, palace, wall paneling, ornate molding, floor, ground, tabletop, table, pedestal, podium, horizontal ledge, horizon, paper roll, paper backdrop, paper sweep, bend, fold, bottom stripe, creased or dirty paper, peeling plaster, grunge, stains, props, objects in central placement space, harsh spotlight",
+      "color_tendency": "taupe/champagne with restrained burgundy/caramel margins",
+      "lighting_direction": "upper_left_soft",
+      "composition": "front-facing abstract editorial graphic; center empty; subtle peripheral accents",
+      "placement_region_normalized": [0.12, 0.12, 0.76, 0.76],
+      "center_normalized": [0.5, 0.5],
+      "compatible_views": ["front"],
+      "allow_floor": false,
+      "allow_visible_horizon": false,
+      "allow_props": false,
+      "risk_rules": {"horizontal_line_risk_threshold": 0.4, "central_edge_density_threshold": 0.08}
+    }
+  }
+}
